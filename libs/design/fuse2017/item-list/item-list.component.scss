@@ -1,0 +1,158 @@
+@import '../../../core/scss/fuse.scss';
+
+mc-item-list {
+  .mat-table {
+    position: relative;
+    overflow: auto;
+
+    @include media-breakpoint('md') {
+      width: calc(100vw - 32px - 32px);
+    }
+    @include media-breakpoint('lt-md') {
+      width: calc(100vw - 16px - 16px);
+    }
+
+    &.navbar-folded {
+      @include media-breakpoint('gt-md') {
+        width: calc(100vw - 240px - 64px - 32px);
+      }
+    }
+
+    &.navbar-not-folded {
+      @include media-breakpoint('gt-md') {
+        width: calc(100vw - 240px - 250px - 32px);
+      }
+    }
+
+    .page-layout {
+      height: auto;
+    }
+  }
+
+  .mat-row {
+    box-sizing: content-box;
+
+    &:hover {
+      background-color: rgba(224, 224, 224, 0.5);
+    }
+  }
+
+  .mat-cell,
+  .mat-header-cell {
+    flex-shrink: 0;
+    flex-grow: 0;
+    user-select: none;
+
+    &:first-child,
+    &:last-child {
+      padding: 0;
+    }
+  }
+
+  .mat-header-cell {
+    position: relative;
+
+    &:hover {
+      cursor: move;
+    }
+  }
+
+  .resizer {
+    display: block;
+
+    &-right {
+      display: block;
+      position: absolute;
+      right: 0px;
+      background-color: white;
+      width: 10px;
+      height: 100%;
+      top: 0;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0px;
+        height: 100%;
+        top: 0;
+        right: 4px;
+        position: absolute;
+        border-right: 2px solid rgba(0, 0, 0, 0.05);
+      }
+
+      &:hover {
+        cursor: ew-resize;
+
+        &::after {
+          border-right: 2px solid rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+
+  .mat-header-row {
+    align-items: normal;
+    box-sizing: content-box;
+  }
+
+  .mat-cell {
+    overflow: hidden;
+
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &:not(:last-child) {
+      p {
+        padding-right: 12px;
+      }
+    }
+  }
+
+  .mat-sort-header-container {
+    padding-right: 12px;
+  }
+
+  #itemList {
+    height: 100%;
+  }
+
+  .mc-red-row .mat-cell {
+    color: red;
+  }
+
+  .mc-green-row .mat-cell {
+    color: green;
+  }
+
+  .mc-blue-row .mat-cell {
+    color: blue;
+  }
+
+  .table-host {
+    overflow: auto;
+
+    .mat-paginator-page-size {
+      display: flex;
+    }
+  }
+
+  mat-sidenav {
+    border: none !important;
+  }
+}
+
+.export-xls-button {
+  margin-left: 35px;
+  .mat-icon {
+    opacity: 0.54;
+  }
+}
+
+.hide-if-mobile {
+  @include media-breakpoint-down('xs') {
+    display: none !important;
+  }
+}

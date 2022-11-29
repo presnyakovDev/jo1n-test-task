@@ -1,0 +1,45 @@
+.show-alert-dialog {
+  .mat-list-item.error-item {
+    height: 36px;
+    .mat-list-item-content {
+      margin-top: 6px;
+      margin-bottom: 6px;
+      height: auto !important;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .wrap-normal {
+    white-space: normal !important;
+  }
+
+  .mat-dialog-container {
+    padding: 0;
+    width: 800px;
+    overflow: hidden;
+
+    .mat-toolbar {
+      min-height: initial;
+      padding-right: 8px !important;
+      .title {
+        line-height: 20px;
+      }
+    }
+
+    .mat-toolbar-row {
+      height: auto !important;
+      padding: 8px 0 !important;
+    }
+
+    .toolbar-bottom {
+      height: auto;
+    }
+  }
+
+  .dialog-content-wrapper {
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+  }
+}

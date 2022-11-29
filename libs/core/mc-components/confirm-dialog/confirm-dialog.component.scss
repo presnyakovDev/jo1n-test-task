@@ -1,0 +1,22 @@
+@import '../../scss/fuse.scss';
+
+.actions {
+  margin-top: 24px;
+
+  @include media-breakpoint('lt-sm') {
+    margin-top: 12px;
+  }
+
+  ::ng-deep {
+    button {
+      @include media-breakpoint('lt-sm') {
+        padding: 0 12px;
+      }
+    }
+  }
+}
+
+.warn {
+  color: var(--warn-color);
+  font-weight: 700;
+}

@@ -1,0 +1,6 @@
+<a class="mat-raised-button {{ item.class }}" (click)="item.callback()" *ngIf="item.callback">
+  <span>{{ item.translationKey ? (item.translationKey | translate) : item.title }}</span>
+</a>
+<a class="mat-raised-button {{ item.class }}" [routerLink]="[item.url]" routerLinkActive="active" *ngIf="item.url">
+  <span>{{ item.translationKey ? (item.translationKey | translate) : item.title }}</span>
+</a>

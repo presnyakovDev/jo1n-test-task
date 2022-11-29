@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JO1N CRM</title>
+    <base href="/" />
+
+    <meta charset="utf-8" />
+    <meta name="description" content="JO1N Underwriting" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
+
+    <!-- Set branding params -->
+    <script>
+      let showDefaultFavicon = true;
+
+      try {
+        const mcBrandingParams = JSON.parse(localStorage.getItem('mcBrandingParams'));
+
+        if (mcBrandingParams && mcBrandingParams.css) {
+          const style = document.createElement('style');
+          style.appendChild(document.createTextNode(mcBrandingParams.css));
+          document.head.appendChild(style);
+          const css = mcBrandingParams.css;
+          const title = String(css).match(/\[data-title\]::after\s*?{\s*?content\s*?:\s*?[\"\'](.*?)[\"\']/);
+
+          if (title && title[1]) {
+            document.title = title[1];
+          }
+
+          const favicon = String(css).match(/\[data-favicon\]::after\s*?{\s*?content\s*?:\s*?[\"\'](.*?)[\"\']/);
+
+          if (favicon && favicon[1]) {
+            showDefaultFavicon = favicon[1] !== 'hide';
+          }
+        }
+      } catch (e) {
+        showDefaultFavicon = true;
+      }
+
+      if (showDefaultFavicon) {
+        let link = document.createElement('link');
+        link.type = 'image/x-icon';
+        link.rel = 'icon';
+        link.href = 'assets/es/favicon.ico';
+        document.getElementsByTagName('head')[0].appendChild(link);
+        link = document.createElement('link');
+        link.rel = 'apple-touch-icon';
+        link.sizes = '180x180';
+        link.href = 'assets/apple-touch-icon.png';
+        document.getElementsByTagName('head')[0].appendChild(link);
+        link = document.createElement('link');
+        link.type = 'image/png';
+        link.rel = 'icon';
+        link.sizes = '32x32';
+        link.href = 'assets/favicon-32x32.png';
+        document.getElementsByTagName('head')[0].appendChild(link);
+        link = document.createElement('link');
+        link.type = 'image/png';
+        link.rel = 'icon';
+        link.sizes = '16x16';
+        link.href = 'assets/favicon-16x16.png';
+        document.getElementsByTagName('head')[0].appendChild(link);
+      }
+    </script>
+    <!-- / Set branding params -->
+
+    <!-- Splash Screen CSS -->
+    <style type="text/css">
+      .splash-screen {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 99999;
+        pointer-events: none;
+        background-color: #fff;
+      }
+
+      .splash-screen-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .splash-screen-logo {
+        width: 260px;
+        margin-bottom: 42px;
+      }
+      .splash-screen-circle {
+        width: 90px;
+        height: 90px;
+        position: relative;
+        margin: auto;
+        background: #777777;
+        border-radius: 50%;
+        opacity: 50%;
+      }
+
+      .splash-screen-inner-circle {
+        width: 80%;
+        height: 80%;
+        background: #fff;
+        border-radius: 50%;
+        margin: auto;
+        vertical-align: middle;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+
+      .splash-screen-spinner {
+        height: 0;
+        width: 0;
+        border-radius: 50%;
+        border-right: 45px solid #ffcd00;
+        border-top: 45px solid transparent;
+        border-left: 45px solid transparent;
+        border-bottom: 45px solid transparent;
+
+        animation: spin 1.5s linear infinite;
+      }
+      @keyframes spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <!-- plash Screen CSS -->
+  </head>
+
+  <body>
+    <div id="splash-screen">
+      <div class="splash-screen-center">
+        <img src="./assets/images/logos/jo1n_full.svg" alt="logo" class="splash-screen-logo" />
+        <div class="splash-screen-circle">
+          <div class="splash-screen-spinner"></div>
+          <div class="splash-screen-inner-circle"></div>
+        </div>
+      </div>
+    </div>
+
+    <fuse-root></fuse-root>
+  </body>
+</html>

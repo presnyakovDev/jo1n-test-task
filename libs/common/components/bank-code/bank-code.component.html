@@ -1,0 +1,13 @@
+<ng-container *ngIf="code; else noCode">
+  <div class="bank-code__container">
+    <div class="bank-code__status-container">
+      <div class="bank-code__status-text" [style.color]="color">{{ status }}</div>
+      <mat-icon class="bank-code__status-icon" [style.color]="color">radio_button_checked</mat-icon>
+    </div>
+  </div>
+</ng-container>
+<ng-template #noCode>
+  <div class="no-code__container">
+    <a href="javascript:void(0)" (click)="showTip()">(?)</a>
+  </div>
+</ng-template>

@@ -1,0 +1,44 @@
+<button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <img class="avatar" src="assets/images/avatars/profile.jpg" (click)="userinfo()" />
+    <span class="username ml-8 mr-4" fxHide fxShow.gt-sm [class.with-shortname]="shortname">
+      <span *ngIf="shortname"
+        >{{ shortname }}<br /><span class="shortname">{{ username }}</span></span
+      >
+      <span *ngIf="!shortname">{{ username }}</span>
+    </span>
+    <mat-icon class="grey s-16 ml-8" fxHide.xs svgIcon="keyboard_arrow_down_black"></mat-icon>
+  </div>
+</button>
+
+<mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+  <a mat-menu-item style="text-decoration: none" [routerLink]="['/operatorForm']" *ngIf="canEditForm">
+    <mat-icon class="grey" svgIcon="edit_black"></mat-icon>
+    <span>{{ 'USER_MENU.FILL_QUESTIONNAIRE' | translate }}</span>
+  </a>
+
+  <a mat-menu-item style="text-decoration: none" [routerLink]="['/profile/changePassword']" *ngIf="canChangePassword">
+    <mat-icon class="grey" svgIcon="menu_black"></mat-icon>
+    <span>{{ 'USER_MENU.CHANGE_PASSWORD' | translate }}</span>
+  </a>
+
+  <a mat-menu-item style="text-decoration: none" [routerLink]="['/validateEmail']" *ngIf="canChangePassword">
+    <mat-icon class="grey" svgIcon="menu_black"></mat-icon>
+    <span>{{ 'USER_MENU.CONFIRM_EMAIL' | translate }}</span>
+  </a>
+
+  <a mat-menu-item style="text-decoration: none" [routerLink]="['/selectWebcam']" *ngIf="canEditForm">
+    <mat-icon class="grey" svgIcon="menu_black"></mat-icon>
+    <span>{{ 'USER_MENU.CHOOSE_WEBCAM' | translate }}</span>
+  </a>
+
+  <button mat-menu-item class="" (click)="about()">
+    <mat-icon class="grey" svgIcon="assignment_black"></mat-icon>
+    <span>{{ 'USER_MENU.ABOUT_APP' | translate }}</span>
+  </button>
+
+  <button mat-menu-item class="" (click)="logout()">
+    <mat-icon class="grey" svgIcon="exit_to_app_black"></mat-icon>
+    <span>{{ 'USER_MENU.LOGOUT' | translate }}</span>
+  </button>
+</mat-menu>

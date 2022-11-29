@@ -1,0 +1,91 @@
+<div class="p-24 imports-excel__container" style="width: 100%; overflow: scroll" fxFlex fxLayout="column">
+  <mat-card class="imports-excel__text-container mat-elevation-z8">
+    <div class="imports-excel__title-container">
+      <h1 class="imports-excel__title">{{ title }}</h1>
+    </div>
+    <div class="imports-excel__description-container">
+      <h4 class="imports-excel__list-columns-title">
+        <strong
+          >ВНИМАНИЕ! Файл должен быть в формате XLSX и содержать 1 лист с обязательным присутствием колонок:</strong
+        >
+      </h4>
+      <mat-list>
+        <mat-list-item *ngFor="let column of tableColumns"
+          ><p>
+            {{ column.name }} - {{ column.description }}. Наличие в таблице
+            <strong> {{ column.required ? 'ОБЯЗАТЕЛЬНО' : 'НЕ ОБЯЗАТЕЛЬНО' }}</strong>
+          </p></mat-list-item
+        >
+      </mat-list>
+    </div>
+  </mat-card>
+  <mat-card class="mat-elevation-z8">
+    <div class="imports-excel__select-banks-container">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="imports-excel__file-input-container">
+      <div fxLayout="row">
+        <div class="imports-excel__file-name-container" *ngIf="fileName">
+          <p class="imports-excel__file-name">Название файла: {{ fileName }}</p>
+        </div>
+        <div>
+          <button type="button" mat-raised-button (click)="fileInput.click()" [disabled]="loading">
+            <div class="imports-excel__upload-button-text-container">
+              <mat-icon class="grey" svgIcon="file_upload"></mat-icon>
+              <span class="imports-excel__upload-button-text">Загрузить {{ fileName ? 'другой' : '' }} файл XLSX</span>
+            </div>
+          </button>
+        </div>
+        <input
+          hidden
+          type="file"
+          #fileInput
+          (change)="getRowsTableFromExcelTable($event.target.files)"
+          [formControl]="inputFileControl"
+        />
+      </div>
+      <div class="imports-excel__send-data-button-container" *ngIf="rowsTablesWithPagination?.length">
+        <button
+          type="button"
+          mat-raised-button
+          class="mat-accent"
+          color="primary"
+          (click)="onClickSendData()"
+          [disabled]="loading"
+        >
+          <span>Отправить данные на сервер</span>
+        </button>
+      </div>
+    </div>
+    <div class="mat-elevation-z8" *ngIf="fileName && !loading">
+      <mat-table [dataSource]="rowsTablesWithPagination" class="mat-elevation-z0">
+        <ng-container *ngFor="let column of tableColumns" matColumnDef="{{ column.name }}">
+          <mat-header-cell fxLayoutAlign="center center" *matHeaderCellDef="let header">
+            {{ column.header }}
+          </mat-header-cell>
+          <mat-cell fxLayoutAlign="center center" *matCellDef="let element">
+            {{ element[column.name] || 'Данные не указаны' }}
+          </mat-cell>
+        </ng-container>
+        <mat-header-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      </mat-table>
+      <div *ngIf="!rowsTablesWithPagination.length" fxLayoutAlign="center center" style="height: 40px">
+        Данные не обнаружены. Проверьте правильность введенных данных.
+      </div>
+      <mat-paginator
+        *ngIf="rowsTablesWithPagination.length"
+        [length]="allRowsTables?.length"
+        [pageSize]="defaultPaginationSize"
+        [pageSizeOptions]="paginationSizeOptions"
+        (page)="changePage($event)"
+      >
+      </mat-paginator>
+    </div>
+    <div class="imports-excel__progress-send-data-container" *ngIf="loading">
+      <mat-progress-bar mode="determinate" [value]="valueProgressBar"></mat-progress-bar>
+      <p class="imports-excel__progress-send-data-text">Происходит процесс импорта. Ожидайте...</p>
+    </div>
+  </mat-card>
+</div>

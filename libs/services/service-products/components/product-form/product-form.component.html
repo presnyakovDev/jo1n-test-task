@@ -1,0 +1,355 @@
+<div class="page-layout simple fullwidth" fxLayout="column">
+  <!-- HEADER -->
+  <div
+    class="header md-accent-bg p-24 h-120 hide-lt-md"
+    fxLayout="row"
+    fxLayoutAlign="space-between end"
+    id="pageHeader"
+  >
+    <div fxLayout="column" fxLayoutAlign="center start">
+      <div class="black-fg" fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="grey secondary-text s-16" svgIcon="home_white"></mat-icon>
+        <mat-icon class="grey secondary-text s-16" svgIcon="chevron_right_white"></mat-icon>
+        <span class="secondary-text">Продукты доп услуг</span>
+      </div>
+      <div class="h1 mt-16">{{ pageTitle }}</div>
+    </div>
+    <div fxLayoutAlign="end center" *ngIf="id">
+      <mc-service-products-copy-button [item]="item"></mc-service-products-copy-button>
+    </div>
+  </div>
+  <div class="header md-accent-bg p-16 h-60 hide-gt-sm" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <div class="crumbs" fxLayoutAlign="start center">
+        <mat-icon class="grey secondary-text s-16" svgIcon="home_white"></mat-icon>
+        <mat-icon class="grey secondary-text s-16" svgIcon="chevron_right_white"></mat-icon>
+        <span class="grey secondary-text">Продукты доп услуг</span>
+        <mat-icon class="grey secondary-text s-16" svgIcon="chevron_right_white"></mat-icon>
+        <span class="grey secondary-text">{{ pageTitle }}</span>
+      </div>
+    </div>
+    <mc-service-products-copy-button *ngIf="id" [item]="item"></mc-service-products-copy-button>
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="p-24">
+      <form [formGroup]="form" name="form" autocomplete="off">
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
+          <mat-form-field fxFlex="50%">
+            <input name="code" formControlName="code" placeholder="{{ fieldTitles['code'] }}" matInput />
+            <mat-error *ngIf="formErrors.has('code')">{{ formErrors.get('code') }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="50%">
+            <input name="caption" formControlName="caption" placeholder="{{ fieldTitles['caption'] }}" matInput />
+            <mat-error *ngIf="formErrors.has('caption')">{{ formErrors.get('caption') }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
+          <div fxFlex="100%">
+            <mat-form-field class="fullwidth">
+              <textarea
+                name="description"
+                rows="3"
+                formControlName="description"
+                matInput
+                type="text"
+                max-rows="3"
+                placeholder="{{ fieldTitles['description'] }}"
+              ></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
+          <div fxFlex="50%" class="ng-select-field">
+            <ng-select
+              appendTo="body"
+              name="companyId"
+              formControlName="companyId"
+              bindValue="value"
+              dropdownPosition="bottom"
+              [selectOnTab]="true"
+              [clearable]="false"
+              [items]="companyVariants"
+              placeholder="{{ fieldTitles['companyId'] }}"
+            ></ng-select>
+            <mat-error *ngIf="formErrors.has('companyId')">{{ formErrors.get('companyId') }}</mat-error>
+          </div>
+
+          <div fxFlex="50%" class="ng-select-field">
+            <ng-select
+              appendTo="body"
+              name="typeId"
+              formControlName="typeId"
+              bindValue="value"
+              dropdownPosition="bottom"
+              [selectOnTab]="true"
+              [clearable]="false"
+              [items]="typeVariants"
+              placeholder="{{ fieldTitles['typeId'] }}"
+            ></ng-select>
+            <mat-error *ngIf="formErrors.has('typeId')">{{ formErrors.get('typeId') }}</mat-error>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
+          <div class="ng-select-field" fxFlex="50%">
+            <ng-select
+              appendTo="body"
+              name="brandId"
+              formControlName="brandId"
+              bindValue="value"
+              dropdownPosition="bottom"
+              [selectOnTab]="true"
+              [clearable]="false"
+              [items]="brandVariants"
+              placeholder="{{ fieldTitles['brandId'] }}"
+            ></ng-select>
+            <mat-error *ngIf="formErrors.has('brandId')">{{ formErrors.get('brandId') }}</mat-error>
+          </div>
+          <div class="ng-select-field" fxFlex="50%">
+            <ng-select
+              appendTo="body"
+              name="goodId"
+              formControlName="goodId"
+              bindValue="value"
+              dropdownPosition="bottom"
+              [selectOnTab]="true"
+              [clearable]="false"
+              [items]="goodVariants"
+              placeholder="{{ fieldTitles['goodId'] }}"
+            ></ng-select>
+            <mat-error *ngIf="formErrors.has('goodId')">{{ formErrors.get('goodId') }}</mat-error>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
+          <div fxFlex="50%" class="ng-select-field">
+            <ng-select
+              appendTo="body"
+              name="reservMethod"
+              formControlName="reservMethod"
+              bindValue="value"
+              dropdownPosition="bottom"
+              [selectOnTab]="true"
+              [clearable]="false"
+              [items]="reservMethodVariants"
+              placeholder="{{ fieldTitles['reservMethod'] }}"
+            ></ng-select>
+            <mat-error *ngIf="formErrors.has('reservMethod')">{{ formErrors.get('reservMethod') }}</mat-error>
+          </div>
+
+          <div
+            fxFlex
+            class="pt-12 pl-8"
+            *ngIf="form.value.reservMethod === 'INTERNAL' || form.value.reservMethod === 'EXTERNAL'"
+          >
+            <mat-checkbox name="jointAccountEnabled" formControlName="jointAccountEnabled">{{
+              fieldTitles['jointAccountEnabled']
+            }}</mat-checkbox>
+          </div>
+
+          <mat-form-field
+            fxFlex
+            *ngIf="
+              (form.value.reservMethod === 'INTERNAL' || form.value.reservMethod === 'EXTERNAL') &&
+              form.value.jointAccountEnabled
+            "
+          >
+            <input
+              name="providerCompanyCaption"
+              formControlName="providerCompanyCaption"
+              readonly
+              placeholder="{{ fieldTitles['providerCompanyId'] }}"
+              (click)="chooseCompany()"
+              matInput
+            />
+            <mat-error *ngIf="formErrors.has('providerCompanyId')">{{ formErrors.get('providerCompanyId') }}</mat-error>
+          </mat-form-field>
+
+          <div fxFlex class="ng-select-field" *ngIf="form.value.reservMethod === 'BANK'">
+            <ng-select
+              appendTo="body"
+              name="bankId"
+              formControlName="bankId"
+              bindValue="value"
+              dropdownPosition="bottom"
+              [selectOnTab]="true"
+              [clearable]="false"
+              [items]="bankVariants"
+              placeholder="{{ fieldTitles['bankId'] }}"
+            ></ng-select>
+            <mat-error *ngIf="formErrors.has('bankId')">{{ formErrors.get('bankId') }}</mat-error>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
+          <div fxFlex="{{ form.value.amountRule === 4 ? '100%' : '50%' }}" class="ng-select-field">
+            <ng-select
+              appendTo="body"
+              name="amountRule"
+              formControlName="amountRule"
+              bindValue="value"
+              dropdownPosition="bottom"
+              [selectOnTab]="true"
+              [clearable]="false"
+              [items]="amountRuleVariants"
+              placeholder="{{ fieldTitles['amountRule'] }}"
+            ></ng-select>
+            <mat-error *ngIf="formErrors.has('amountRule')">{{ formErrors.get('amountRule') }}</mat-error>
+          </div>
+
+          <mat-form-field fxFlex="50%" *ngIf="form.value.amountRule === 1 || form.value.amountRule === 3">
+            <input
+              name="baseAmount"
+              formControlName="baseAmount"
+              placeholder="{{ fieldTitles['baseAmount'] }}"
+              matInput
+            />
+            <mat-error *ngIf="formErrors.has('baseAmount')">{{ formErrors.get('baseAmount') }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="50%" *ngIf="form.value.amountRule === 2">
+            <input name="baseRate" formControlName="baseRate" placeholder="{{ fieldTitles['baseRate'] }}" matInput />
+            <mat-error *ngIf="formErrors.has('baseRate')">{{ formErrors.get('baseRate') }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
+          <div fxFlex="50%" class="ng-select-field">
+            <ng-select
+              appendTo="body"
+              name="extensionAmountRule"
+              formControlName="extensionAmountRule"
+              bindValue="value"
+              dropdownPosition="bottom"
+              [selectOnTab]="true"
+              [clearable]="false"
+              [items]="extensionAmountRuleVariants"
+              placeholder="{{ fieldTitles['extensionAmountRule'] }}"
+            ></ng-select>
+            <mat-hint align="start" *ngIf="form.value.extensionAmountRule === 2">
+              - Если страховка товарная - базой является стоимость товара.<br />
+              - Если страховка Не товарная - базой является сумма кредита.<br /><br />
+            </mat-hint>
+            <mat-error *ngIf="formErrors.has('extensionAmountRule')">{{
+              formErrors.get('extensionAmountRule')
+            }}</mat-error>
+          </div>
+
+          <mat-form-field fxFlex="50%" *ngIf="form.value.extensionAmountRule !== 2">
+            <input
+              name="baseExtensionAmount"
+              formControlName="baseExtensionAmount"
+              placeholder="{{ fieldTitles['baseExtensionAmount'] }}"
+              matInput
+            />
+            <mat-error *ngIf="formErrors.has('baseExtensionAmount')">{{
+              formErrors.get('baseExtensionAmount')
+            }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="50%" *ngIf="form.value.extensionAmountRule === 2">
+            <input
+              name="baseExtRate"
+              formControlName="baseExtRate"
+              placeholder="{{ fieldTitles['baseExtRate'] }}"
+              matInput
+            />
+            <mat-error *ngIf="formErrors.has('baseExtRate')">{{ formErrors.get('baseExtRate') }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
+          <div fxFlex="50%" class="ng-select-field">
+            <ng-select
+              appendTo="body"
+              name="beginStampRule"
+              formControlName="beginStampRule"
+              bindValue="value"
+              dropdownPosition="bottom"
+              [selectOnTab]="true"
+              [clearable]="false"
+              [items]="beginStampRuleVariants"
+              placeholder="{{ fieldTitles['beginStampRule'] }}"
+            ></ng-select>
+            <mat-error *ngIf="formErrors.has('beginStampRule')">{{ formErrors.get('beginStampRule') }}</mat-error>
+          </div>
+
+          <mat-form-field fxFlex="50%">
+            <input
+              name="baseBeginValue"
+              formControlName="baseBeginValue"
+              placeholder="{{ fieldTitles['baseBeginValue'] }}"
+              matInput
+            />
+            <mat-error *ngIf="formErrors.has('baseBeginValue')">{{ formErrors.get('baseBeginValue') }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
+          <div fxFlex="50%" class="ng-select-field">
+            <ng-select
+              appendTo="body"
+              name="endStampRule"
+              formControlName="endStampRule"
+              bindValue="value"
+              dropdownPosition="bottom"
+              [selectOnTab]="true"
+              [clearable]="false"
+              [items]="endStampRuleVariants"
+              placeholder="{{ fieldTitles['endStampRule'] }}"
+            ></ng-select>
+            <mat-error *ngIf="formErrors.has('endStampRule')">{{ formErrors.get('endStampRule') }}</mat-error>
+          </div>
+
+          <mat-form-field fxFlex="50%">
+            <input
+              name="baseEndValue"
+              formControlName="baseEndValue"
+              placeholder="{{ fieldTitles['baseEndValue'] }}"
+              matInput
+            />
+            <mat-error *ngIf="formErrors.has('baseEndValue')">{{ formErrors.get('baseEndValue') }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
+          <div fxFlex="50%" class="ng-select-field">
+            <ng-select
+              appendTo="body"
+              name="seriesStrategy"
+              formControlName="seriesStrategy"
+              bindValue="value"
+              dropdownPosition="bottom"
+              [selectOnTab]="true"
+              [clearable]="false"
+              [items]="seriesStrategyVariants"
+              placeholder="{{ fieldTitles['seriesStrategy'] }}"
+            ></ng-select>
+            <mat-error *ngIf="formErrors.has('seriesStrategy')">{{ formErrors.get('seriesStrategy') }}</mat-error>
+          </div>
+        </div>
+
+        <div class="mb-16" fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
+          <div>
+            <mat-checkbox name="installments" formControlName="installments">{{
+              fieldTitles['installments']
+            }}</mat-checkbox>
+          </div>
+        </div>
+
+        <div class="footer" fxLayout="row" fxLayoutAlign="end start">
+          <button mat-raised-button class="mat-warn" type="button" *ngIf="id" (click)="remove()">Удалить</button>
+          <button mat-raised-button class="mat-accent" type="button" (click)="save()">Сохранить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- / CONTENT -->
+</div>
+

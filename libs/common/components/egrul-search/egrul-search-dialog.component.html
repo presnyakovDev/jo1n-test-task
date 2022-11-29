@@ -1,0 +1,34 @@
+<div class="dialog-content-wrapper">
+  <mat-toolbar matDialogTitle class="mat-accent m-0">
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="title dialog-title">Поиск юридич. лица / ИП</span>
+    </div>
+  </mat-toolbar>
+
+  <div mat-dialog-content class="p-24 m-0" fusePerfectScrollbar>
+    <div>
+      <mat-form-field class="mr-8">
+        <input matInput placeholder="ИНН/ОГРН/Название" [(ngModel)]="query" (keydown)="handleKeyDown($event)" />
+      </mat-form-field>
+
+      <button mat-raised-button (click)="findBtn(true)" class="find-button">Найти</button>
+    </div>
+
+    <h3 *ngIf="!items.length" mat-subheader>Укажите значение и нажмите [Найти]</h3>
+
+    <mat-radio-group *ngIf="items.length" class="example-radio-group" [(ngModel)]="selected">
+      <h3 mat-subheader>Выберите из списка:</h3>
+      <mat-radio-button class="example-radio-button mb-12" *ngFor="let item of items" [value]="item">
+        {{ item.shortName }}, {{ item.addressEgrul }}, ИНН: {{ item.inn }}, ОГРН: {{ item.ogrn }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-raised-button (click)="exit()" class="exit-button">Закрыть</button>
+
+    <button mat-raised-button (click)="importBtn()" class="import-button mat-accent" [disabled]="!selected">
+      Импорт
+    </button>
+  </div>
+</div>

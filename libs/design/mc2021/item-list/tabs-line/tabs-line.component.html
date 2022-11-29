@@ -1,0 +1,17 @@
+<ng-container *ngFor="let filter of specs.filters">
+  <ng-container *ngIf="!filter.hidden && filter.showAsPresetsList">
+    <div fxLayout="row" class="filter-tabs">
+      <div
+        *ngFor="let item of filter.presets"
+        matRipple
+        class="filter-tab-value e2e-{{ item.value }}-list"
+        [class.selected]="item.value === filter?.selectedValue?.value"
+        (click)="filter.selectedValue = item; onClickFilter(filter)"
+      >
+        <span>{{ item.caption }}</span>
+        <span *ngIf="item.badge" class="badge">{{ item.badge }}</span>
+        <button class="help" (click)="showTip(item); $event.stopPropagation()" *ngIf="item.hint">?</button>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

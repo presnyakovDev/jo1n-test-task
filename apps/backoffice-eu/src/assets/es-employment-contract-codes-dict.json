@@ -1,0 +1,26 @@
+[
+  {
+    "code": "FORMACION",
+    "caption": "Formación"
+  },
+  {
+    "code": "T",
+    "caption": "Temporal"
+  },
+  {
+    "code": "FD",
+    "caption": "Fijo discontinuo"
+  },
+  {
+    "code": "FIJO",
+    "caption": "Fijo"
+  },
+  {
+    "code": "EP",
+    "caption": "En prácticas"
+  },
+  {
+    "code": "OS",
+    "caption": "Por obra y servicio"
+  }
+]

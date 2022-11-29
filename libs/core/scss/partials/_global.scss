@@ -1,0 +1,17 @@
+body {
+  > mat-sidenav-container {
+    height: 100%;
+  }
+}
+
+.no-padding-dialog {
+  .mat-dialog-container {
+    padding: 0;
+  }
+}
+
+.no-border-radius-dialog {
+  .mat-dialog-container {
+    border-radius: 0;
+  }
+}

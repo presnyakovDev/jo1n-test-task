@@ -1,0 +1,38 @@
+<mat-expansion-panel [(expanded)]="expanded">
+  <mat-expansion-panel-header
+    [class.hidden]="!isOpenedMenu && !expanded && isLaptop"
+    [class.collapsed]="!isOpenedMenu && isLaptop"
+  >
+    <mat-panel-title>
+      <strong class="expansion-panel-title">{{ title | translate }}</strong>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="expansion-panel-content">
+    <div class="nav-link__container" *ngFor="let link of children">
+      <!--        [class.condensed]="showMenuCategories"-->
+      <a
+        [class.nav-link_opened-menu]="isOpenedMenu"
+        [routerLink]="link.url"
+        class="nav-link"
+        [class.current-nav-link]="(currentUrl$ | async) === link.url"
+        *ngIf="link.url"
+      >
+        <div class="nav-link__icon-container">
+          <mat-icon class="nav-link__icon" [svgIcon]="link.icon"></mat-icon>
+        </div>
+        <div class="nav-link__text-container">
+          <span class="nav-link__text">{{ link.translationKey ? (link.translationKey | translate) : link.title }}</span>
+
+          <span
+            class="nav-link__badge"
+            *ngIf="link.badge"
+            [style.color]="link.badge.color"
+            [style.background-color]="link.badge.backgroundColor"
+            >{{ link.badge.title }}</span
+          >
+        </div>
+      </a>
+    </div>
+  </div>
+</mat-expansion-panel>

@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Печать документа</title>
+  </head>
+  <body>
+    <iframe id="iframe" src="" width="100%" height="100%" style="border: 0"> </iframe>
+
+    <script>
+      var frame = document.getElementById('iframe');
+      frame.src = data.frameSrc;
+      window.document.title = data.title;
+    </script>
+  </body>
+</html>

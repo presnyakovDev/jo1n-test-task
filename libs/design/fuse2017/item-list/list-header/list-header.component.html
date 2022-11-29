@@ -1,0 +1,82 @@
+<div class="header" fxLayout="row" fxLayoutAlign="start center">
+  <div
+    style="height: 100%"
+    fxFlex
+    fxLayout="row"
+    fxLayoutAlign="start center"
+    fxLayout.xs="column"
+    fxLayoutAlign.xs="space-evenly stretch"
+  >
+    <ng-container *ngFor="let filter of specs?.filters">
+      <div
+        class="search-wrapper md-white-bg"
+        fxFlex
+        fxLayout="row"
+        fxLayoutAlign="start center"
+        fxHide.gt-md
+        mat-drawer-content
+        *ngIf="filter.showIfMobile"
+      >
+        <div class="search" flex fxLayout="row" fxLayoutAlign="start center">
+          <input
+            placeholder="{{ filter.caption }}"
+            fxFlex
+            (click)="setFilter(filter)"
+            value="{{
+              filter.selectedValue?.translationKey
+                ? (filter.selectedValue.translationKey | translate)
+                : filter.selectedValue?.caption
+            }}"
+            readonly
+          />
+          <mat-icon matSuffix class="hover-hand" (click)="removeFilter(filter)">close</mat-icon>
+        </div>
+      </div>
+    </ng-container>
+
+    <div
+      class="search-wrapper md-white-bg"
+      fxFlex
+      fxLayout="row"
+      fxLayoutAlign="start center"
+      *ngIf="specs?.freeTextQueryEnabled"
+    >
+      <div class="search" flex fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="grey hover-hand" (click)="refresh()" svgIcon="search_black"></mat-icon>
+        <input
+          placeholder="{{ specs?.freeTextQueryPlaceholder }}"
+          fxFlex
+          [(ngModel)]="searchText"
+          (ngModelChange)="onSearchTextChange($event)"
+        />
+      </div>
+    </div>
+
+    <button
+      class="md-white-bg settings-wrapper"
+      fxFlex
+      fxHide.xs
+      fxLayout="row"
+      fxLayoutAlign="start center"
+      (click)="settingsClick()"
+    >
+      <mat-icon svgIcon="settings_black"></mat-icon>
+      <span class="pl-8">{{ 'COMMON.SETTINGS' | translate }}</span>
+    </button>
+
+    <button
+      class="md-white-bg button-wrapper export-xls-button hide-lt-md"
+      fxFlex
+      fxLayout="row"
+      fxLayoutAlign="start center"
+      (click)="exportToXLSClick()"
+    >
+      <mat-icon svgIcon="file_download" [ngStyle]="{ color: 'black' }"></mat-icon>
+      <span class="pl-8">{{ 'COMMON.XLS_ACTION' | translate }}</span>
+    </button>
+  </div>
+
+  <button mat-fab class="add-button mat-warn" fxFlex fxHide.gt-md (click)="addItem()" *ngIf="specs?.addItemEnabled">
+    <mat-icon class="grey" svgIcon="add_black"></mat-icon>
+  </button>
+</div>

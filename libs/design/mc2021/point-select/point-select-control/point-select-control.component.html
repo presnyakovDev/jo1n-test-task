@@ -1,0 +1,17 @@
+<div class="select-input-search-container">
+  <input
+    type="text"
+    [placeholder]="'COMMON.SEARCH_' | translate"
+    class="select-input-search"
+    [formControl]="searchControl"
+  />
+  <mat-icon class="select-input-search-icon">search</mat-icon>
+</div>
+<cdk-virtual-scroll-viewport itemSize="50" class="points-container">
+  <div *cdkVirtualFor="let item of items" (click)="onSelectPoint(item)" class="point">
+    <p class="point-company-caption">{{ item?.companyCaption }}</p>
+    <p class="point-point-caption">{{ item?.caption }}</p>
+  </div>
+
+  <div class="point-not-searching" *ngIf="!items?.length">{{ 'COMMON.ERRORS.NO_VARIANTS' | translate }}</div>
+</cdk-virtual-scroll-viewport>

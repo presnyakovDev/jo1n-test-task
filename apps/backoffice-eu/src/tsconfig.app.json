@@ -1,0 +1,23 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/out-tsc/apps/backoffice",
+    "baseUrl": "",
+    "types": []
+  },
+  "files": ["main.ts", "polyfills.ts"],
+  "include": [
+    "**/*.d.ts",
+    "../../../libs/core/index.ts",
+    "../../../libs/common/index.ts",
+    "../../../libs/core/mc-masks.ts",
+    "../../../libs/credit-product-management/index.ts",
+    "../../../libs/settings/index.ts",
+    "../../../libs/orders/es-pos/index.ts",
+    "../../../libs/orders/core/index.ts",
+    "../../../libs/orders/processes/index.ts",
+    "../../../libs/services/service-products/index.ts",
+    "../../../libs/security/access-groups/index.ts",
+    "../../../libs/security/roles/index.ts"
+  ]
+}

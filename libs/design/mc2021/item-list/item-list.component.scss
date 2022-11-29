@@ -1,0 +1,97 @@
+@import '../../../core/scss/fuse';
+
+mc-2021-item-list {
+  $header-height: 72px;
+
+  #itemList {
+    height: 100%;
+  }
+
+  .container {
+    max-height: 100%;
+    height: 100%;
+    @media (max-width: 1024px) {
+      display: block;
+    }
+  }
+
+  mat-sidenav-container {
+    div.main-column {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    background-color: #ffffff !important;
+    width: 100%;
+
+    .center {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .item-list-header {
+      padding: 2px 16px;
+    }
+  }
+
+  mat-sidenav {
+    border: none !important;
+  }
+
+  mat-sidenav-content {
+    width: 100%;
+  }
+
+  .item-list-header {
+    height: $header-height;
+    min-height: $header-height;
+    max-height: $header-height;
+  }
+
+  @media (max-width: 1023px) {
+    .item-list-header {
+      height: auto;
+      min-height: $header-height;
+      max-height: none;
+    }
+  }
+
+  .button-custom-export-wrapper {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0);
+    position: relative;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: none !important;
+    width: 40px;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    margin-top: 0px;
+    margin-left: 12px;
+
+    @include media-breakpoint-down('sm') {
+      max-height: 48px;
+      margin-top: 6px;
+      margin-left: 0px;
+      margin-right: 12px;
+      display: none;
+    }
+
+    .mat-icon {
+      display: flex;
+      color: rgba(0, 0, 0);
+      height: 16px;
+      width: 16px;
+      min-height: 16px;
+      min-width: 16px;
+    }
+  }
+}

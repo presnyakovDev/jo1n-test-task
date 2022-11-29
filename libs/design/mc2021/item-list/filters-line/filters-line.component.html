@@ -1,0 +1,22 @@
+<div fxLayout="row" fxLayoutAlign="start center">
+  <mc-2021-item-list-filters-button [specs]="specs"></mc-2021-item-list-filters-button>
+
+  <ng-container *ngFor="let filter of specs.filters">
+    <ng-container *ngIf="!filter.hidden && !filter.showAsPresetsList">
+      <div class="value" fxLayout="row" fxLayoutAlign="center center" *ngIf="filter.selectedValue">
+        <div class="filter-name" fxFlex (click)="onClickFilter(filter)">
+          {{
+            filter.selectedValue.translationKey
+              ? (filter.selectedValue.translationKey | translate)
+              : filter.selectedValue.caption
+          }}
+        </div>
+        <div class="div-chip-remove" *ngIf="!filter.disableClose">
+          <mat-icon (click)="onRemoveFilter(filter)" svgIcon="clear_black" inline="true"></mat-icon>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <div class="drop-all" (click)="dropAllFilters()" *ngIf="canDropAllFilters">{{ 'COMMON.CANCEL' | translate }}</div>
+</div>

@@ -1,0 +1,16 @@
+<div class="processing" *ngIf="!processStatus.finished && processStatus.firstLoad">
+  <mat-spinner></mat-spinner>
+  <p>{{ firstLoadText }}</p>
+</div>
+<div class="processing" *ngIf="!processStatus.finished && !processStatus.firstLoad && loadTimer > 0">
+  <p>{{ waitTimerText }}</p>
+  <div class="timer">{{ loadTimerMin }}:{{ loadTimerSec }}</div>
+</div>
+<div class="processing" *ngIf="!processStatus.finished && !processStatus.firstLoad && loadTimer === 0">
+  <mat-spinner></mat-spinner>
+  <p>{{ waitWithoutTimerText }}</p>
+</div>
+<div class="processing" *ngIf="processStatus.finished && !processStatus.canceled">
+  <mat-icon>done</mat-icon>
+  <p>{{ doneText }}</p>
+</div>

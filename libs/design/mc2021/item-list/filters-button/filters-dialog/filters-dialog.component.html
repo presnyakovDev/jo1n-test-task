@@ -1,0 +1,19 @@
+<div class="settings-container" fxLayout="column" fxLayoutAlign="start center">
+  <div matDialogContent class="check-list">
+    <div fxLayout="column">
+      <div class="filters-header">
+        {{ 'COMMON.LIST_FILTERS' | translate }}
+      </div>
+      <ng-container *ngFor="let filter of filters">
+        <ng-container *ngIf="!filter.hidden && !filter.showAsPresetsList">
+          <mc-2021-filter-item [settingsService]="settingsService" [filter]="filter"></mc-2021-filter-item>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+
+  <div matDialogActions class="actions p-16 m-0">
+    <button mat-raised-button class="cancel" (click)="close()">{{ 'COMMON.CANCEL' | translate }}</button>
+    <button mat-raised-button class="mat-accent" (click)="apply()">{{ 'COMMON.APPLY' | translate }}</button>
+  </div>
+</div>

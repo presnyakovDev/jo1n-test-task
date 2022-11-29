@@ -1,0 +1,29 @@
+<div class="settings-container" fxLayout="column" fxLayoutAlign="start center">
+  <mat-toolbar matDialogTitle class="mat-accent m-0">
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-between start">
+      <span class="title dialog-title">
+        {{ dialogTitleTranslationKey ? (dialogTitleTranslationKey | translate) : dialogTitle }}
+      </span>
+    </div>
+  </mat-toolbar>
+
+  <div matDialogContent class="check-list p-24 m-0">
+    <p>{{ 'COMMON.COLUMNS_SELECTION' | translate }}:</p>
+    <mat-checkbox
+      *ngFor="let option of availableColumns"
+      class="checkbox p-12"
+      [checked]="selectedColumns.includes(option.id)"
+      [title]="option.translationKey ? (option.translationKey | translate) : option.caption"
+      (change)="changeValue($event, option.id)"
+    >
+      {{ (option.translationKey ? (option.translationKey | translate) : option.caption) | ellipsis: 20 }}
+    </mat-checkbox>
+  </div>
+
+  <div matDialogActions class="actions p-16 m-0">
+    <button mat-raised-button (click)="close()">{{ 'COMMON.CANCEL' | translate }}</button>
+    <button mat-raised-button class="mat-accent" (click)="save()">
+      {{ rightButtonTextTranslationKey ? (rightButtonTextTranslationKey | translate) : rightButtonText }}
+    </button>
+  </div>
+</div>

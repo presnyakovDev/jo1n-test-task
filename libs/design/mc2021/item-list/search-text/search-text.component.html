@@ -1,0 +1,14 @@
+<div class="search-wrapper" fxFlex fxLayout="row" fxLayoutAlign="end center" *ngIf="specs?.freeTextQueryEnabled">
+  <div class="search" fxLayout="row" fxLayoutAlign="start center">
+    <mat-icon class="hover-hand" (click)="refresh()" svgIcon="search_black"></mat-icon>
+    <input
+      placeholder="{{
+        specs?.freeTextQueryPlaceholderTranslateKey
+          ? (specs?.freeTextQueryPlaceholderTranslateKey | translate)
+          : specs?.freeTextQueryPlaceholder
+      }}"
+      fxFlex="270px"
+      [formControl]="searchText"
+    />
+  </div>
+</div>

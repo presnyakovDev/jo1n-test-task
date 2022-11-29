@@ -1,0 +1,100 @@
+<div class="scroll-container-table-item-list">
+  <div class="mat-table__container">
+    <mat-table
+      #table
+      [dataSource]="dataSource"
+      [@animateStagger]="{ value: '50' }"
+      matSort
+      [class.navbar-folded]="navbar?.isFoldedActive"
+      [class.navbar-not-folded]="!navbar?.isFoldedActive"
+      cdkDropList
+      cdkDropListOrientation="horizontal"
+      (cdkDropListDropped)="columnDropped($event)"
+    >
+      <ng-container [cdkColumnDef]="column.id" *ngFor="let column of specs?.columns; let i = index">
+        <mat-header-cell
+          *cdkHeaderCellDef
+          [class.hide-if-mobile]="!column.showIfMobile"
+          [style]="getSafeStyle(column.columnStyle)"
+          [style.flex-basis]="column.width + 'px'"
+          fxLayoutAlign="center center"
+          cdkDrag
+          (cdkDragStarted)="columnDragStarted()"
+        >
+          <span *ngIf="(resizing$ | async) || (reordering$ | async)" align="center" class="pl-12 pr-12">{{
+            column.translationKey ? (column.translationKey | translate) : column.caption
+          }}</span>
+          <span
+            mat-sort-header
+            [disabled]="!column.sort"
+            class="pl-12 pr-12"
+            *ngIf="!(resizing$ | async) && !(reordering$ | async)"
+            >{{ column.translationKey ? (column.translationKey | translate) : column.caption }}</span
+          >
+
+          <div class="resizer">
+            <div class="resizer-right" (mousedown)="onResizeColumn($event, column)"></div>
+          </div>
+        </mat-header-cell>
+
+        <mat-cell
+          *cdkCellDef="let item"
+          [class.hide-if-mobile]="column.showIfMobile === false"
+          [style]="getSafeStyle(column.columnStyle)"
+          [style.flex-basis]="column.width + 'px'"
+        >
+          <p
+            class="text-truncate"
+            *ngIf="!column.component; else columnComponent"
+            [innerHTML]="column.content(item)"
+          ></p>
+
+          <ng-template #columnComponent>
+            <mc-2021-item-list-custom-cell
+              [factory]="column.component(item, specs.rowStyle(item))"
+              [item]="item"
+            ></mc-2021-item-list-custom-cell>
+          </ng-template>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row
+        *cdkHeaderRowDef="displayedColumns; sticky: true"
+        [style.min-width]="rowWidth + 'px'"
+      ></mat-header-row>
+      <mat-row
+        *cdkRowDef="let item; columns: displayedColumns"
+        [class.mc-red-row]="specs.rowStyle(item) === 'red'"
+        [class.mc-green-row]="specs.rowStyle(item) === 'green'"
+        [class.mc-blue-row]="specs.rowStyle(item) === 'blue'"
+        [style.min-width]="rowWidth + 'px'"
+        [ngClass]="specs.rowStyle(item)"
+        (click)="onClickRow(item)"
+        matRipple
+        [@animate]="{ value: '*', params: { y: '100%' } }"
+      >
+      </mat-row>
+    </mat-table>
+  </div>
+
+  <div *ngIf="loading$ | async" class="items-loading">
+    {{ 'COMMON.LOADING_' | translate }}
+  </div>
+
+  <div *ngIf="error$ | async" class="loading-error">
+    {{ error }}
+  </div>
+
+  <div class="mat-paginator__container">
+    <div class="mat-paginator">
+      <mat-paginator
+        #paginator
+        [length]="totalCount"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        [pageIndex]="pageIndex"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>

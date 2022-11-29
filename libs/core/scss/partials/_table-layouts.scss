@@ -1,0 +1,22 @@
+// Tables
+$table-row-height-sm: 32px;
+$table-row-height-xs: 40px;
+
+.mat-header-row,
+.mat-row {
+  padding: 0 24px !important;
+  @include media-breakpoint-down('sm') {
+    padding: 0 12px !important;
+  }
+}
+
+.mat-header-row,
+.mat-row {
+  @include media-breakpoint-down('sm') {
+    min-height: $table-row-height-sm !important;
+  }
+
+  @include media-breakpoint-down('xs') {
+    min-height: $table-row-height-xs !important;
+  }
+}

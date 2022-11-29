@@ -1,0 +1,88 @@
+<div class="dialog-content-wrapper">
+  <mat-toolbar matDialogTitle class="mat-accent m-0">
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-between start">
+      <span class="title dialog-title">
+        {{ title }}
+      </span>
+    </div>
+  </mat-toolbar>
+
+  <div mat-dialog-content class="m-0" fusePerfectScrollbar>
+    <div fxFlex fxLayout="column" fxLayoutAlign="start start">
+      <div class="search" flex fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="grey" svgIcon="search_black"></mat-icon>
+        <input
+          type="text"
+          [formControl]="searchInput"
+          [placeholder]="'BACKOFFICE.LIST.SEARCH_PLACEHOLDER.SEARCH_BY_CAPTION' | translate"
+        />
+      </div>
+
+      <div class="table-host" fusePerfectScrollbar style="width: 100%">
+        <mat-table #table [dataSource]="dataSource" [@animateStagger]="{ value: '50' }" matSort>
+          <!-- PartnerCaption Column -->
+          <ng-container cdkColumnDef="partnerCaption">
+            <mat-header-cell *cdkHeaderCellDef mat-sort-header>
+              {{ 'BACKOFFICE.LIST.COLUMN.CAPTION' | translate }}
+            </mat-header-cell>
+            <mat-cell *cdkCellDef="let item">
+              <p class="text-truncate">{{ item.getTitle() }}</p>
+            </mat-cell>
+          </ng-container>
+
+          <!-- InfoStatus Column -->
+          <ng-container cdkColumnDef="infoStatus">
+            <mat-header-cell *cdkHeaderCellDef mat-sort-header>
+              {{ 'BACKOFFICE.LIST.COLUMN.STATUS' | translate }}
+            </mat-header-cell>
+            <mat-cell *cdkCellDef="let item">
+              <p class="text-truncate">{{ item.infoStatusCaption }}</p>
+            </mat-cell>
+          </ng-container>
+
+          <!-- Comment Column -->
+          <ng-container cdkColumnDef="description">
+            <mat-header-cell *cdkHeaderCellDef class="hide-lt-sm">
+              {{ 'BACKOFFICE.LIST.COLUMN.COMMENT' | translate }}
+            </mat-header-cell>
+            <mat-cell *cdkCellDef="let item" class="hide-lt-sm">
+              <p class="text-truncate">{{ item.description | slice: 0:32 }}</p>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row
+            *cdkRowDef="let item; columns: displayedColumns"
+            (click)="select(item)"
+            matRipple
+            [@animate]="{ value: '*', params: { y: '100%' } }"
+          >
+          </mat-row>
+        </mat-table>
+
+        <mat-paginator #paginator [length]="getTotalCount()" [pageSize]="getPageSize()" [pageIndex]="getPageNumber()">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+
+  <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="advancedActions">
+    <button mat-raised-button *ngIf="canCreate" (click)="create()">
+      {{ 'COMMON.CREATE' | translate }}
+    </button>
+
+    <button mat-raised-button *ngIf="canDrop" (click)="drop()">
+      {{ 'COMMON.RESET' | translate }}
+    </button>
+
+    <button mat-button mat-raised-button (click)="exit()" class="mat-accent">
+      {{ 'COMMON.CLOSE' | translate }}
+    </button>
+  </div>
+
+  <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="end center" *ngIf="!advancedActions">
+    <button mat-button mat-raised-button (click)="exit()" class="mat-accent">
+      {{ 'COMMON.CLOSE' | translate }}
+    </button>
+  </div>
+</div>

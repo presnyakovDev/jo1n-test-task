@@ -1,0 +1,22 @@
+<div class="container">
+  <button class="button" [class.no-points]="!points?.length" (click)="onChangeStateSelect()">
+    <div class="company">
+      <p class="company-caption" *ngIf="companyCaption">{{ companyCaption }}</p>
+      <p class="point-caption">{{ pointCaption }}</p>
+    </div>
+    <mat-icon
+      *ngIf="points?.length"
+      class="button-arrow-icon"
+      svgIcon="expand_more"
+      [style.transform]="isOpenedSelect ? 'rotate(180deg)' : 'rotate(0deg)'"
+    >
+    </mat-icon>
+  </button>
+  <div class="select-container" *ngIf="isOpenedSelect">
+    <mc-2021-point-select-control
+      [points]="points"
+      (onChangeStateSelect)="onChangeStateSelect()"
+    ></mc-2021-point-select-control>
+  </div>
+  <div class="bg-container" *ngIf="isOpenedSelect" (click)="onChangeStateSelect()"></div>
+</div>

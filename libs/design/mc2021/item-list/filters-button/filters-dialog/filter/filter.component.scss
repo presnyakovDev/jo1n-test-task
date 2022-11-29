@@ -1,0 +1,33 @@
+.filter {
+  margin-left: 50px;
+  margin-right: 16px;
+  margin-bottom: 25px;
+}
+
+.div-chip-remove {
+  display: flex;
+  align-items: center;
+
+  .mat-icon {
+    display: flex;
+    width: 12px;
+    height: 12px;
+    min-width: auto;
+    min-height: auto;
+    margin-left: 4px;
+  }
+}
+
+.value {
+  margin-left: 25px;
+  margin-bottom: 13px;
+  cursor: pointer;
+}
+
+.filter-name {
+  display: flex;
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}

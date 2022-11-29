@@ -1,0 +1,1238 @@
+{
+  "ONBOARDING": {
+    "SEND_FORM_CONFIRMATION": "Upewnij się, że wszystkie obowiązkowe pola są wypełnione, w przeciwnym razie informacje będą musiały zostać wprowadzone ponownie",
+    "ATTACHMENTS": {
+      "ERRORS": {
+        "CHECK_ATTACHES_NO_MANDATORY": "Nie znaleziono obowiązkowych załączników",
+        "TO_BIG_FILE": "Rozmiar pliku nie może przekraczać 7 MB"
+      }
+    },
+    "NO_INTERNET_CONNECTION": "Problemy z siecią. Jest połączenie internetowe",
+    "SUCCESS-PAGE": {
+      "SUCCESS-TITLE": "Powodzenie",
+      "SUCCESS-TEXT1": "Twoje dane zostały pomyślnie przesłane do weryfikacji i",
+      "SUCCESS-TEXT2": "dalsza rejestracja"
+    }
+  },
+  "BACKOFFICE": {
+    "FORMS": {
+      "BANK": "Bank",
+      "COMPANY_BANK_CODE": "Kod banku firmy",
+      "POINT_BANK_CODE": "Kod banku punktów",
+      "OPERATOR_BANK_CODE": "Kod banku operatora",
+      "FIRST_REQUEST_TS": "Stempel czasu pierwszego żądania",
+      "LAST_REQUEST_TS": "Znacznik czasowy ostatniego żądania",
+      "BANK_CODE_ENTERED_TS": "Wprowadzono sygnaturę czasową kodu",
+      "BANK_CODE": "Kod banku",
+      "BANK_ACCOUNT": "Konto bankowe",
+      "BANK_CORRESPONDENT_ACCOUNT": "Konto korespondencyjne",
+      "BANK_CURRENT_ACCOUNT": "Sprawdzam konto",
+      "BANK_EXT_CODE": "Kod wew. banku",
+      "BANK_CODE_TYPE": "Typ kodu (pożyczony kod banku)",
+      "BANK_CODE_DISABLED": "Kod banku wyłączony",
+      "BANK_CODE_DISABLE_REASON": "Przyczyna wyłączenia kodu bankowego",
+      "BANK_CODE_DELETION_CONFIRM": "Usunąć ten kod?",
+      "BANK_NO_ADDITIONAL_PARAMS_FOR_BANK": "Brak dodatkowych parametrów dla banku",
+      "BANK_OFFICE": "Biuro banku",
+      "FIRST_NAME": "Imie Imie",
+      "LAST_NAME": "Nazwisko",
+      "SECOND_NAME": "Drugie imię",
+
+      "NATIONALITY": "narodowość",
+      "DOC_TYPE": "Typ dokumentu (DNI/NIE)",
+      "DOC_NUMBER": "Liczba DNI/NIE",
+      "DOC_VALID_THRU": "Data ważności DNI/NIE",
+      "DOC_ISSUER_CONTRY": "Wyprawa krajowa DNI/NIE",
+      "OWNER_CRITERIA": "Kryteria kwalifikujące Cię jako beneficjenta rzeczywistego",
+      "ENTER_PERCENTAGE": "Określ procent, %",
+      "ENTER_POSITION": "Określ pozycję",
+
+      "LOGIN_MODE": "Tryb ustawiania logowania/hasła",
+      "LOGIN_NUM": "Koperta # (z loginem/hasłem)",
+      "USERNAME": "Nazwa użytkownika",
+      "USER_ALIAS": "alias wybrany przez użytkownika",
+      "PASSWORD": "Hasło",
+      "MOBILE_PHONE": "Telefon komórkowy",
+      "POINT_CHANGE_REQUEST": "Poproś o zmianę punktu przy wejściu",
+      "POINT_CHANGE_ALLOW": "Multikonto (zezwalaj na zmianę punktów)",
+      "REQUEST_FORM": "Obowiązek wypełnienia ankiety",
+      "OPERATOR_QUESTIONNAIRE": "Kwestionariusz",
+      "CAPTION": "Podpis",
+      "TIMEZONE": "Strefa czasowa (dla połączeń)",
+      "EXT_CODE": "Kod zewnętrzny",
+      "CIF_INN": "Kod (CIF)",
+      "BANK_NAME": "Nazwa banku",
+      "BANK_CODE_BIK": "Kod banku (BIK)",
+      "BANK_CORR_ACCOUNT": "Konto korespondencyjne banku",
+      "BANK_CURR_ACCOUNT": "Rachunek bieżący bankowy",
+      "COMMENT": "Komentarz",
+      "AUTHORIZED_CONTACT": "Kontakt wykonawczy",
+      "AUTHORIZED_CONTACT_FULLNAME": "Kontakt wykonawczy",
+      "AUTHORIZED_CONTACT_FIRSTNAME": "Imię osoby do kontaktu wykonawczego",
+      "AUTHORIZED_CONTACT_LASTNAME1": "Nazwisko ojca osoby kontaktowej z kierownictwa",
+      "AUTHORIZED_CONTACT_LASTNAME2": "Nazwisko matki kontaktu wykonawczego",
+      "AUTHORIZED_CONTACT_PHONE": "Telefon kontaktowy wykonawczy",
+      "AUTHORIZED_CONTACT_EMAIL": "Kontaktowy adres e-mail wykonawczy",
+      "AUTHORIZED_CONTACT_BIRTH_DATE": "Data urodzenia osoby kontaktowej wykonawczej",
+      "AUTHORIZED_CONTACT_BIRTH_COUNTRY": "Kraj urodzenia osoby do kontaktu wykonawczego",
+      "AUTHORIZED_CONTACT_NIF": "Kontakt wykonawczy NIF",
+      "AUTHORIZED_CONTACT_RESIDENCE_COUNTRY": "Kraj zamieszkania osoby odpowiedzialnej za kontakt",
+      "CONTACT_EXECUTIVE": "Kontakt wykonawczy",
+      "SHOW_INFO": "Pokaż informacje",
+      "CONTACT_DOCUMENTS": "Kontakt dotyczący dokumentów",
+      "MANAGER": "Kierownik",
+      "ADDRESS": "Adres Adres",
+      "SHOP_NAME": "Nazwa sklepu",
+      "MARKET": "Rynek",
+      "WORKING_HOURS": "Godziny pracy",
+      "MANAGER_FULLNAME": "Pełna nazwa menedżera",
+      "MANAGER_PHONE": "Telefon menedżera",
+      "MANAGER_EMAIL": "E-mail menedżera",
+      "ADDRESS_STREET_TYPE": "Typ ulicy",
+      "ADDRESS_STREET_NAME": "Nazwa ulicy",
+      "ADDRESS_STREET_NUMBER": "Numer ulicy",
+      "ADDRESS_POST_INDEX": "Indeks postów",
+      "ADDRESS_PROVINCE": "Prowincja",
+      "ADDRESS_SETTLEMENT": "Ugoda",
+      "TERRITORY_LEGACY": "Terytorium (starsze)",
+      "FULLNAME": "Pełne imię",
+      "MAIN_ACTIVITY": "Główna działalność",
+      "FIRSTNAME": "Imie Imie",
+      "LASTNAME1": "Nazwisko ojca",
+      "LASTNAME2": "Nazwisko matki",
+      "COMPANY_REGISTRATION_COUNTRY": "Kraj rejestracji",
+      "COMPANY_RESIDENCE_COUNTRY": "Kraj zamieszkania",
+      "PERSON_RESIDENCE_COUNTRY": "Kraj zamieszkania",
+      "BIRTH_DATE": "Data urodzenia",
+      "BIRTH_COUNTRY": "Kraj urodzenia",
+      "СIF": "CIF",
+      "NIF": "NIF",
+      "PHONE": "Telefon",
+      "COMMERCIAL_PHONE": "Telefon komercyjny",
+      "EMAIL": "E-mail",
+      "COMMERCIAL_EMAIL": "Komercyjny adres e-mail",
+      "COMPANY_REGISTRATION_ADDRESS": "Adres rejestracji firmy",
+      "BANK_ACCOUNT_FOR_CREDIT": "Konto bankowe dla kwoty kredytu",
+      "BANK_ACCOUNT_FOR_COMISSION": "Konto bankowe do wypłaty prowizji",
+      "LEGAL_NAME": "Nazwa prawna",
+      "TRADE_NAME": "Nazwa handlowa",
+      "COMPANY_REGISTRATION_DATE": "Fecha constitución",
+      "POINT_RESPONSIBLE_NAME": "Nombre y apellidos Responsable Establecimiento",
+      "POINT_RESPONSIBLE_PHONE": "Teléfono Responsable Establecimiento"
+    },
+    "COMMON": {
+      "NEW_PARTNER": "Add partner",
+      "PARTNERS": "Partners",
+      "NEW_COMPANY": "Add company",
+      "COMPANIES": "Companies",
+      "NEW_POINT": "Add point of sales",
+      "POINTS": "Points of sales",
+      "POINT": "Point of sales",
+      "NEW_OPERATOR": "Add operator",
+      "OPERATORS": "Operators",
+      "OPERATOR": "Operator"
+    },
+    "BLOCK_TITLE": {
+      "OWNER_OR_TOP_MANAGER": "Owner or top manager",
+      "COMPANY_REGISTRATION_DETAILS": "Company registration details",
+      "DATA_AUTORIZED_PERSON": "Authorized person",
+      "AUTORIZED_PERSON": "Authorized person",
+      "SEARCH_COMPANY": "Search company",
+      "POINT_NAME": "Point"
+    },
+    "TABS": {
+      "SUMMARY": "Summary",
+      "FORM": "Form",
+      "ACCOUNT": "Account",
+      "ATTACHES": "Attaches",
+      "MANAGERS": "Managers",
+      "POINT_CODES": "Point codes",
+      "OPERATOR_CODES": "Operator codes",
+      "POINT_ACCESS": "Points access",
+      "ONLINE": "Online",
+      "MANAGE_DOCUMENT_SCANS": "Manage document scans",
+      "PLEASE_UPLOAD": "Please upload",
+      "CONNECTORS": "Connectors",
+      "UPDATE_REQUEST": "Update Request",
+      "PRODUCT_COMMISSIONS": "Product commissions"
+    },
+    "FILTERS_PLACEHOLDER": {
+      "FIND_COUNTRY": "Find country...",
+      "NOT_FOUND_COUNTRY": "Country not found",
+      "FIND_REGISTRATION_COUNTRY": "Find registration country...",
+      "NOT_FOUND_REGISTRATION_COUNTRY": "Registration country not found",
+      "FIND_RESIDENCE_COUNTRY": "Find residence country...",
+      "NOT_FOUND_RESIDENCE_COUNTRY": "Residence country not found",
+      "FIND_BIRTH_COUNTRY": "Find birth country...",
+      "NOT_FOUND_BIRTH_COUNTRY": "Birth country not found",
+      "FIND_PROVINCE": "Find province...",
+      "NOT_FOUND_PROVINCE": "Province not found",
+      "FIND_STREET_TYPE": "Find street type...",
+      "NOT_FOUND_STREET_TYPE": "Street type not found"
+    },
+    "ACTIONS": {
+      "ADD_COMPANY": "Add company",
+      "ADD_POINT": "Add point of sales",
+      "ADD_OPERATOR": "Add operator",
+      "SET_PASSWORD": "Set password",
+      "ACTIVATE": "Activate",
+      "DEACTIVATE": "Deactivate",
+      "EXPORT": "Export",
+      "EXPORT_TO_XLS_ZIP": "Export to XLS/ZIP",
+      "CHANGE_POINT": "Change point of sales",
+      "CHANGE_COMPANY": "Change company",
+      "CHANGE_PARTNER": "Change partner",
+      "CREDIT_PRODUCTS": "Credit products",
+      "DELETE": "Delete",
+      "COPY": "Copy",
+      "SEARCH": "Search",
+      "SEND_FOR_VERIFICATION": "Send for verification"
+    },
+    "SUMMARY": {
+      "INN": "INN",
+      "NIF": "NIF",
+      "CIF": "CIF",
+      "STATUS": "Status",
+      "LOGIN": "Login",
+      "BLOCKED_IN_BANKS": "Blocked in banks",
+      "SYSTEM_STATUS": "System status",
+      "SALES_TERRITORY": "Sales territory",
+      "SALES_ACCESS_GROUP": "Manager",
+      "CALLCENTER_ACCESS_GROUP": "Call-center",
+      "BANK_CODES": "Bank codes",
+      "SET_STATUS": "Set status",
+      "SET_MANAGER": "Set manager",
+      "SET_CALL_CENTER": "Set call-center",
+      "LAST_LOGIN": "Last login",
+      "WAS_NOT_LOGIN": "Was not logged in.",
+      "FORM_FILLED": "Questionnaire filled",
+      "QUESTION_RESET_CALL_CENTER": "Reset call-center?",
+      "TO_MANY_ITEMS_PAGINATION_ENABLED": "Due to the large number of items, paginated output is included!",
+      "TO_MANY_ITEMS_PAGINATION_ENABLED_WARN": "Please note that the group selection buttons process all pages at once.",
+      "ACCESS_GROUP_SET_ERROR": "Error setting the access group",
+      "UPDATE_REQUEST": "Update requests",
+      "NO_ACTIVE_REQUESTS": "No active requests.",
+      "FIELD": "Field",
+      "CURRENT_VALUE": "Actual value",
+      "REQUESTED_VALUE": "Requested value",
+      "ACCESS_GROUP_RESET_ERROR": "Error resetting the access group"
+    },
+    "ATTACHES": {
+      "COMPANY_ATTACHES": "Company attaches",
+      "POINT_ATTACHES": "Point of sales attaches",
+      "ONLY_IF_1_COMPANY": "Company attaches are not available here because this partner has several companies",
+      "ONLY_IF_1_COMPANY_1_POINT": "Point of sales attaches are not available here because this partner has multiple points"
+    },
+    "SETTINGS": {
+      "SETTINGS_TITLE": "Backoffice settings list",
+      "ADD_SETTINGS": "Add new settings group",
+      "VIEW_EXISTING_TITLE": "Settings group",
+      "CREATE_NEW_TITLE": "Creating new settings group",
+      "DISACTIVATE": "Disactivate",
+      "ACTIVATE": "Activate",
+      "GROUP_CAPTION": "Group name",
+      "GROUP_CODE": "Group code",
+      "SAVE_BUTTON_TEXT": "Save settings",
+      "CREATE_NEW_BUTTON_TEXT": "Create new group",
+      "HEADER_CAPTION": "Bank name",
+      "BANKS_TITLE": "Active banks"
+    },
+    "MENU": {
+      "SALES": "Sprzedaż",
+      "PARTNERS": "Partners",
+      "COMPANIES": "Companies",
+      "POINTS": "Points of sales",
+      "OPERATORS": "Operators",
+      "SALES_TERRITORIES": "Sales territories",
+      "REGISTRATION": "Registration",
+      "IMPORT_POINT_CODES": "Import point codes",
+      "IMPORT_POINT_CODES_BLOCK": "Import point codes blocks",
+      "IMPORT_OPERATOR_POINTS": "Import operator points",
+      "IMPORT_OPERATOR_BLOCK": "Import operator blocks",
+      "IMPORT_OPERATOR_CODES": "Import operator codes",
+      "EXPORT_TO_KAFKA": "Export objects to Kafka",
+      "SCRIPT_REPOSITORIES": "Script repositories",
+      "SETTINGS": "Backoffice settings(new)"
+    },
+    "LIST": {
+      "SEARCH_PLACEHOLDER": {
+        "CAPTION_ID_COMMENT": "Caption, id, comment",
+        "FULLNAME_ID_USERNAME": "Fullname, id, username"
+      },
+      "COLUMN": {
+        "ID": "ID",
+        "INN": "NIF/INN",
+        "CODE": "Code",
+        "EXT_CODE": "Ext. code",
+        "CAPTION": "Caption",
+        "FULL_NAME": "Full name",
+        "USERNAME": "Username",
+        "EMAIL": "E-mail",
+        "MOBILE_PHONE": "Mobile phone",
+        "CREATED_DATE": "Date of creation",
+        "STATUS": "Status",
+        "MANAGER": "Manager",
+        "COMMENT": "Comment",
+        "PARTNER": "Partner",
+        "COMPANY": "Company",
+        "POINT": "Point"
+      }
+    }
+  },
+  "COMMON": {
+    "REDIRECTION": "Redirection...",
+    "NO": "No",
+    "YES": "Yes",
+    "OK": "Ok",
+    "FOR": "for",
+    "REQUESTED": "requested",
+    "NOT_REQUESTED": "no request",
+    "PAGE_SHORT": "page",
+    "PHOTO": "Photo",
+    "DOWNLOAD": "Download",
+    "BACK_TO_SHOP": "Back to shop",
+    "CANCEL": "Anuluj",
+    "APPLY": "Stosować",
+    "ACCEPT": "Accept",
+    "REJECT": "Reject",
+    "REPLACE": "Replace",
+    "DELETE": "Delete",
+    "DELETION_": "Deletion...",
+    "DOWNLOAD_FOR_VIEWING_WORD_FILE": "DOC/DOCX-file. You can download this file for viewing.",
+    "DOWNLOAD_FOR_VIEWING_BIG_FILE": "The file size is too large to display. You can download this file for viewing.",
+    "CONFIRMATION_REQUIRED": "Confirmation required",
+    "CONFIRM": "Сonfirm",
+    "TAKING_TO_WORK": "Taking to work...",
+    "SELECT": "Select",
+    "CLOSE": "Zamknij",
+    "VERSION": "version",
+    "SAVE": "Save",
+    "UNSUPPORTED_BROWSER": "Unsupported browser",
+    "PLEASE_": "Please ",
+    "MOBILE_ATTACHES_DONE_TEXT": "The scans of the documents have been uploaded. You can return to the application form in the main interface.",
+    "DOWNLOAD_CHROME": "download actual version of Google Chrome",
+    "SKIPPING_STEPS_IS_NOT_ALLOWED": "Skipping steps is not allowed",
+    "PLEASE_PROCEED_TO_STEP": "Please proceed to step ",
+    "PHONE_SHORT": "Phone",
+    "MONTH_SHORT": "Month",
+    "EXCEPT": "Except",
+    "IN_FIRST_MONTH": "in first month",
+    "MONTH": "Miesiąc",
+    "MONTHS": "Miesięcy",
+    "SETTINGS": "Settings",
+    "LIST_ADD": "Add",
+    "LIST_SETTINGS": "Settings",
+    "LIST_FILTERS": "Filtruj",
+    "COLUMNS_SELECTION": "Select the displayed columns",
+    "XLS_SETTINGS": "Configuring download to XLS",
+    "XLS_ACTION": "Download to XLS",
+    "SEARCH_BY_NAME": "Search by name",
+    "OPERATOR_ORDERS": "Operator orders",
+    "FILTER": "Filtr",
+    "LOADING_": "Ładowanie...",
+    "LOADING_LIST": "Loading list...",
+    "UPDATING_": "Updating...",
+    "DATA_UPDATING_ERROR": "Data updating error",
+    "DATA_LOADING_ERROR": "Data loading error",
+    "SAVING_": "Saving...",
+    "COPYING_AN_ORDER_": "Kopiowanie zamówienia...",
+    "DATA_SAVING_ERROR": "Data saving error",
+    "SEARCH_": "Search...",
+    "TRY_ANOTHER_LINE": "Nothing was found on this line, try another line",
+    "FROM": "From",
+    "AND": "and",
+    "TO": "To",
+    "ACTIONS": "Actions",
+    "SELECT_ALL": "Select all",
+    "SHOW_MORE": "Pokaż więcej",
+    "COLLAPSE_LIST": "Zwiń listę",
+    "TITLE_DICTIONARY_PROFESSION": "Profession dictionary and rules for linked dictionaries",
+
+    "PAGINATOR": {
+      "EMPTY_LABEL": "0 pozycji",
+      "RANGE_LABEL": "przedmiotów",
+      "ITEMS_PER_PAGE": "Przedmioty na stronę: "
+    },
+    "ERRORS": {
+      "ERROR": "ERROR!",
+      "SAVING_ERROR": "Saving error",
+      "DELETION_ERROR": "Deletion error",
+      "UPDATE_ERROR": "Update error",
+      "NO_VARIANTS": "No available variants for selection.",
+      "INVALID_DATE": "Invalid date",
+      "CHECK_DATE": "Check date",
+      "REGISTRATION_FROM_18_YEARS": "Registration from the age of 18",
+      "CONFUSED_DATES": "The start date cannot be greater than the end date.",
+      "DATA_LOADING_ERROR": "Data loading error",
+      "DOCUMENT_DOWNLOAD_ERROR": "Document download error",
+      "FILE_ALREADY_LOADED": "Such a file has already been uploaded to",
+      "PLEASE_ENTER_VALUE_BEETWEEN": "Please, enter value beetween",
+      "NEED_AUTH": {
+        "TITLE": "Authorization required",
+        "MESSAGE": "Authorization is required due to a period of inactivity or restart of servers. You will be redirected to the authorization server"
+      }
+    }
+  },
+  "USER_MENU": {
+    "FILL_QUESTIONNAIRE": "Fill out the questionnaire",
+    "CHANGE_PASSWORD": "Change Password",
+    "CONFIRM_EMAIL": "Confirm Email",
+    "CHOOSE_WEBCAM": "Choose webcam",
+    "ABOUT_APP": "About",
+    "LOGOUT": "Logout",
+    "BLOCK": "Block"
+  },
+  "CHANGE_PASSWORD_DIALOG": {
+    "TITLE": "Change password",
+    "OLD_PASSWORD": "Old password",
+    "CONDITION_TYPE_NEW_PASSWORD": "The new password must contain at least 6 characters (a-z, 0-9, special characters), at least one lowercase character, and a digit",
+    "NEW_PASSWORD": "New password",
+    "REPEAT_NEW_PASSWORD": "Repeat new password",
+    "SUCCESSFULL_TEXT": "Password was successfull changed",
+    "TITLE_BUTTON_SUBMIT": "Change",
+    "TITLE_BUTTON_CANCEL": "Anuluj",
+    "PASSWORDS_NOT_MATCH": "Passwords don't match"
+  },
+  "SYSTEM_INFORMATION_DIALOG": {
+    "TITLE": "System information",
+    "VERSION_WEB_APP": "Version web-app",
+    "VERSION_BROWSER": "Version browser",
+    "OPERATING_SYSTEM": "Operating System",
+    "BROWSER_WINDOW_SIZE": "Browser window size",
+    "WINDOW_RESOLUTION": "Window resolution",
+    "TITLE_BUTTON_CLOSE": "Close"
+  },
+  "NAVIGATION": {
+    "BACKOFFICE": "Onboarding (backoffice)",
+    "LENDING": "KREDYTY",
+    "STORE": "NARZĘDZIA SKLEPU",
+    "PERSONAL_SECTION": "Personal section",
+    "INSTRUCTION": "Instruction",
+    "NEWS": "News",
+    "MOBILE_SCANS": "Credit scans",
+    "ANALYTICS": "STATYSTYKI"
+  },
+  "TOOLBAR": {
+    "CHANGE_POINT_OF_SALE": "Change point of sale",
+    "YOUR_MANAGER": "Your manager:",
+    "HOTLINE": "Infolinia:"
+  },
+  "SELECTORS": {
+    "BANK": {
+      "DIALOG_TITLE": "Select bank",
+      "SEARCH_TITLE": "Search by caption",
+      "CAPTION_TITLE": "Caption"
+    },
+    "ENTRYPOINT": {
+      "DIALOG_TITLE": "Select entrypoint",
+      "SEARCH_TITLE": "Search by caption",
+      "CAPTION_TITLE": "Caption"
+    },
+    "STAGE": {
+      "DIALOG_TITLE": "Select stage (status)",
+      "SEARCH_TITLE": "Search by caption",
+      "CAPTION_TITLE": "Caption"
+    },
+    "SCOPE": {
+      "DIALOG_TITLE": "Select scope",
+      "SEARCH_TITLE": "Search by caption",
+      "CAPTION_TITLE": "Caption"
+    },
+    "STATUS": {
+      "DIALOG_TITLE": "Select status",
+      "SEARCH_TITLE": "Search by caption",
+      "CAPTION_TITLE": "Caption"
+    },
+    "SYSTEM_STATUS": {
+      "DIALOG_TITLE": "Select system status",
+      "SEARCH_TITLE": "Search by caption",
+      "CAPTION_TITLE": "Caption"
+    },
+    "RU_COMPANY": {
+      "DIALOG_TITLE": "Select legal entity",
+      "SEARCH_TITLE": "Search by name or INN",
+      "CAPTION_TITLE": "Legal entity name (INN)",
+      "INN_TITLE": "INN"
+    },
+    "POINT": {
+      "DIALOG_TITLE": "Select point",
+      "SEARCH_TITLE": "Search by point name or address",
+      "CAPTION_TITLE": "Point (address)"
+    },
+    "PARTNER": {
+      "DIALOG_TITLE": "Select partner",
+      "SEARCH_TITLE": "Search by partner name",
+      "CAPTION_TITLE": "Name"
+    },
+    "OPERATOR": {
+      "DIALOG_TITLE": "Select operator",
+      "SEARCH_TITLE": "Search by fullname",
+      "CAPTION_TITLE": "Fullname (point)"
+    }
+  },
+  "FILTERS": {
+    "MY_ORDER_FILTER": {
+      "CAPTION": "Selection",
+      "PRESETS": {
+        "ALL_ORDERS": "Wszystkie zamówienia",
+        "ORDERS_IN_PROGRESS": "Zamówienia w toku",
+        "REQUIRE_ATTENTION": "Wymagające uwagi",
+        "POINT_ORDERS": "Wnioski",
+        "RESULT": "Zakończony",
+        "ORDERS_POINT_ISSUE": "Retailer applications",
+        "ORDERS_CALL_CENTER": "Order call-center",
+        "ORDERS_CALL_CENTER_AFTER_COURIER": "Order call-center after courier"
+      }
+    },
+    "BANK": "Bank",
+    "SCOPE": "Scope",
+    "ENTRYPOINT": "Entry point",
+    "STAGE": "Stage",
+    "STATUS": "Status",
+    "SYSTEM_STATUS": "System status",
+    "POINT": "Point",
+    "COMPANY": "Legal entity",
+    "PARTNER": "Partner",
+    "OPERATOR": "Operator",
+    "STAGE_FILER": {
+      "CAPTION": "Stan (etap)",
+      "STAGES": {
+        "END": "Sprzedany",
+        "CALCULATOR": "Kalkulator",
+        "APPLICATION": "Nowy wniosek",
+        "OFFERS": "Wybierz ofertę",
+        "SIGN": "Podpisać",
+        "CHECKATTACHES": "Check attaches",
+        "FIXATTACHES": "Fix attaches",
+        "CHECKATTACHESBANK": "Sprawdź załączniki przez bank",
+        "GOODATTACHESBANK": "Musisz wyciągnąć przedmiot",
+        "FIXATTACHESBANK": "Napraw załączniki dla banku",
+        "FRAUDDENIAL": "Declined",
+        "FORREFUND": "Proces zwrotu pieniędzy",
+        "FORREFUNDBANK": "Dla banku zwrotu",
+        "SUCCESS": "Success",
+        "SUCCESSWITHOFFERS": "Success with another offers",
+        "REFUND": "Zwrot",
+        "ATTENTION": "Attention",
+        "CANCEL*": "Anuluj",
+        "CLIENTREJECT": " - Client reject",
+        "CANCEL": " - Cancelled",
+        "CALCULATORDROP": " - Calculator drop",
+        "APPLICATIONDROP": " - Application drop",
+        "OFFERSBANKSDECLINE": " - Offers banks decline",
+        "OFFERSCLIENTREJECT": " - Offers client reject",
+        "OFFERSDROP": " - Offers drop",
+        "SIGNDROP": " - Sign drop"
+      }
+    },
+    "PERIOD_DATE_FILTER": {
+      "CAPTION": "Okres",
+      "TITLE": "Filtruj według daty",
+      "ONE_DAY": "1 dzień",
+      "THREE_DAYS": "3 dni",
+      "TEN_DAYS": "10 dni",
+      "THIRTY_DAYS": "30 dni",
+      "NINETY_DAYS": "90 days",
+      "OVER_90_DAYS": "Archive (90+ days)",
+      "ONE_HUNDRED_AND_EIGHTY_DAYS": "180 dni",
+      "DATE_RANGE": "Date range",
+      "SELECT_RANGE": "Select date range"
+    },
+    "BANK_FILTER": {
+      "CAPTION": "Bank"
+    },
+    "OWNER": "Owner"
+  },
+  "CALL_CENTER": {
+    "APPLICATION_PROCESSING_STAGE": "Application processing stage"
+  },
+  "ES_POS_LIST": {
+    "CLIENT_EMAIL_SEND": "Link został wysłany na e-mail",
+    "CAPTION": "Orders",
+    "DESCRIPTION": "Here are all the orders you are working with now or have worked before",
+    "SEARCH_PLACEHOLDER": "Szukaj według nazwy klienta lub numeru zamówienia",
+    "COLUMNS": {
+      "ORDER_ID": "Numer zamówienia",
+      "CLIENT_FULL_NAME": "Klient",
+      "CREATE_STAMP": "Data utworzenia",
+      "CREATE_DATE_TIME": "Data/czas powstania",
+      "DOC_STATUS": "Etap (stan)",
+      "MAIN_SCOPE": "Gdzie jest aplikacja",
+      "ENTRY_POINT": "Punkt wejścia",
+      "CREDIT_AMOUNT_ORIGIN": "Wnioskowana kwota pożyczki",
+      "CREDIT_AMOUNT_FOR_COMPANY": "Kwota do przelania do sklepu",
+      "BANK_NAME": "Bank",
+      "OPERATOR_FULL_NAME": "Operator",
+      "POINT_CAPTION": "Punkt handlowy",
+      "PARTNER_CAPTION": "Partner",
+      "PHONE_NUMBER": "Telefon",
+      "CREDIT_PRODUCT_NAME": "Produkt kredytowy",
+      "EXTERNAL_REFERENCE": "Zewnętrzne odniesienia",
+      "COMPANY_CAPTION": "Firma",
+      "CONTRACT_NUMBER": "Numer kontaktowy",
+      "OWNER_USERNAME": "Właściciel",
+      "OWNER_FULL_NAME": "Imię i nazwisko właściciela",
+      "ACTIONS": "działania"
+    }
+  },
+  "LIST_POINT": {
+    "CAPTION": "Point orders",
+    "DESCRIPTION": "Here are all the applications of your point, regardless of whether you personally worked with them or not"
+  },
+  "ACTIONS": {
+    "SEND_LINK_FOR_CLIENT": "Wyślij link na e-mail",
+    "COPY": "Kopiuj",
+    "HISTORY": "Historia zmian",
+    "SCOPES": "Zakresy",
+    "DEBUG_INFORMATION": "Debug information",
+    "SCANS": "Scans and photo",
+    "COMPLETE_APPLICATION": "Kompletna praca z aplikacją",
+    "COMPLETE_APPLICATION_WITH_DESCRIPTION": "Finish working with the application? The application will not be canceled and any authorized user of the system will be able to take it to work.",
+    "CANCEL_A_LOAN": "Cancel a loan",
+    "RETURN_A_LOAN": "Return a loan",
+    "RETURN_A_LOAN_TO_MC": "Return a loan to MC",
+    "INFORMATION_ABOUT_CLIENT": "Information about client",
+    "TEST_PRINT": "Test documents printing",
+    "SHUT_DOWN_OWNER": "Shut down owner",
+    "MANUAL_FINISHING": "Manual finishing",
+    "TO_THE_CANCELLATION_PROCESS": "To the cancellation process",
+    "PUBLISH_TO_KAFKA": "Publish to kafka",
+    "CANCEL_A_DEAL": "Cancel a deal",
+    "TAKE_TO_WORK": "Take to work"
+  },
+  "LOADER_TITLES": {
+    "RESET_THE_OWNER": "Reset the owner...",
+    "TAKING_TO_WORK": "Taking to work...",
+    "TAKING_TO_WORK_CALL_CENTER": "Access customer service center...",
+    "CREATE_REQUEST": "Create request..."
+  },
+  "CREDIT_DETAILS": {
+    "TITLE": "Borrower",
+    "NAME": "Name",
+    "PHONE": "Phone",
+    "PHOTO": "Photo",
+    "CUSTOMER_INFORMATION_ON_THE_APPLICATION": "Customer information on the application"
+  },
+  "CREDIT_SIGN_INFO": {
+    "ISSUED_CREDIT_PRODUCT": "Producto de crédito emitido",
+    "ISSUED_LOAN_PRODUCT": "Issued loan product",
+    "BANK": "Bank",
+    "PRODUCT_PARAMETERS": "Product parameters",
+    "TERM": "Term",
+    "RATE": "Rate",
+    "PAYMENT": "Payment",
+    "PRODUCT_NAME": "Product name",
+    "CREDIT_AMOUNT_FOR_COMPANY": "Amount to transfer to store",
+    "FIRST_INSTALLMENT": "First installment",
+    "SERVICES": "Services",
+    "CONTRACT_NUMBER": "Contract number",
+    "AUTHORIZATION_CODE": "Authorization code",
+    "SMS_SIGNING": "SMS-signing",
+    "ORDER_BASKET": "Order basket",
+    "PRODUCTS": "Products",
+    "PARTNER_SERVICES": "Partner services",
+    "AUTH_ERROR": "Authorization error"
+  },
+  "ES_POS_ORDERS": {
+    "NEW_LEAD": "Wniosek",
+    "LEADS_ALL": "Applications (all)",
+    "LEADS_PM": "Applications",
+    "MY_LEADS": "Wnioski",
+    "LEAD": "Wniosek kredytowy",
+    "DICTIONARIES": "Dictionaries",
+    "STAGES": {
+      "CALCULATOR": {
+        "LIST_CAPTION": "Kalkulator",
+        "VIEW_CAPTION": "Kalkulator"
+      },
+      "APPLICATION": {
+        "LIST_CAPTION": "Wniosek",
+        "VIEW_CAPTION": "Wniosek"
+      },
+      "OFFERS": {
+        "LIST_CAPTION": "Wybierz ofertę",
+        "VIEW_CAPTION": "Wybierz ofertę"
+      },
+      "SIGN": {
+        "LIST_CAPTION": "Podpisać",
+        "VIEW_CAPTION": "Podpisać"
+      },
+      "CHECKATTACHESBANK": {
+        "LIST_CAPTION": "Sprawdź",
+        "VIEW_CAPTION": "Sprawdź"
+      },
+      "FIXATTACHESBANK": {
+        "LIST_CAPTION": "Fix errors",
+        "VIEW_CAPTION": "Fix errors"
+      },
+      "GOODATTACHESBANK": {
+        "LIST_CAPTION": "Zaakceptowano",
+        "VIEW_CAPTION": "Zaakceptowano"
+      },
+      "END": {
+        "LIST_CAPTION": "Gotowe",
+        "VIEW_CAPTION": "Gotowe"
+      },
+      "OFFERSDROP": {
+        "LIST_CAPTION": "Anulowany",
+        "VIEW_CAPTION": "Anulowany"
+      },
+      "CALCULATORDROP": {
+        "LIST_CAPTION": "Anulowany",
+        "VIEW_CAPTION": "Anulowany"
+      },
+      "APPLICATIONDROP": {
+        "LIST_CAPTION": "Anulowany",
+        "VIEW_CAPTION": "Anulowany"
+      },
+      "FORREFUND": {
+        "LIST_CAPTION": "For refund",
+        "VIEW_CAPTION": "For refund"
+      },
+      "FORREFUNDBANK": {
+        "LIST_CAPTION": "Dla banku zwrotu",
+        "VIEW_CAPTION": "Dla banku zwrotu"
+      },
+      "REFUND": {
+        "LIST_CAPTION": "Refunded",
+        "VIEW_CAPTION": "Refunded"
+      },
+      "PRESIGN": {
+        "LIST_CAPTION": "Wybór",
+        "VIEW_CAPTION": "Wybór"
+      },
+      "PRESIGNDROP": {
+        "LIST_CAPTION": "Upuszczanie przed podpisem",
+        "VIEW_CAPTION": "Upuszczanie przed podpisem"
+      },
+      "SIGNDROP": {
+        "LIST_CAPTION": "Upuść znak",
+        "VIEW_CAPTION": "Upuść znak"
+      },
+      "PRESIGNERROR": {
+        "LIST_CAPTION": "Błąd przed podpisem",
+        "VIEW_CAPTION": "Błąd przed podpisem"
+      },
+      "SIGNERROR": {
+        "LIST_CAPTION": "Zarejestruj błąd",
+        "VIEW_CAPTION": "Zarejestruj błąd"
+      },
+      "SIGNDECLINE": {
+        "LIST_CAPTION": "Bank declined",
+        "VIEW_CAPTION": "Bank declined"
+      },
+      "FRAUDDENIAL": {
+        "LIST_CAPTION": "Declined",
+        "VIEW_CAPTION": "Declined"
+      },
+      "OFFERSBANKSDECLINE": {
+        "LIST_CAPTION": "Refusal",
+        "VIEW_CAPTION": "Refusal"
+      }
+    },
+    "ENTRYPOINTS": {
+      "CREATEFROMCREDITTOPRESIGN": "Select bank for loan",
+      "CREATEONLINEFROMCREDITTOPRESIGN": "Select bank for online loan"
+    },
+    "STEP_ACTIONS": {
+      "SEND_TO_BANKS": "Wyślij wniosek",
+      "CANCEL": "Anuluj",
+      "NEXT": "Dalej",
+      "PREV": "Wróć",
+      "SUBMIT_TO_CC": "Prześlij do call-center w celu wypełnienia",
+      "RETURN_TO_CC_QUEUE": "Powrót do kolejki call-center",
+      "RETURN_TO_ORDER_LIST": "Wróć do listy zamówień"
+    },
+    "DIALOGS": {
+      "CREATE_OPERATOR": {
+        "HEADER": "Nowy wniosek kredytowy",
+        "MOBILE_PHONE": "Telefon komórkowy",
+        "HOW_TO_ADDRESS_CLIENT": "Jak zwracać się do klienta w kontaktach",
+        "CREATE": "Stwórz wniosek",
+        "CANCEL": "Anuluj",
+        "SPINNER_TEXT": "Rejestruję aplikację...",
+        "REGISTRATION_ERRORS": "Błędy podczas rejestracji wniosku"
+      },
+      "QR_CODE": {
+        "HEADER": "Prześlij ze swojego smartfona",
+        "SUBHEADER": "Przesłać plik",
+        "LINES": {
+          "1": "Włącz aparat (lub aplikację do odczytywania kodów QR) w smartfonie",
+          "2": "Skieruj aparat na kod QR",
+          "3": "Śledź ten link"
+        },
+        "COMMENT": "Nota: Instala “Lector de códigos QR” u otra aplicación para leer códigos QR si la cámara original de tu smartphone no los lee"
+      },
+      "VIEW_ATTACHES": {
+        "HEADER": "PHOTOS AND SCANS OF DOCUMENTS by credit No."
+      },
+      "CANCEL_CREDIT": {
+        "SHOW_HELP_DEFAULT_MESSAGE": "This application can be canceled by clicking on the button",
+        "FOR_REFUND_MESSAGE": {
+          "1": "Cancellation of the credit will be possible after the completion of the process of cancellation of loan No.",
+          "2": "You can go to it by clicking on the button"
+        },
+        "FINAL_STAGE_MESSAGE": {
+          "CAPTION": "Authorized loan found No.",
+          "1": "To cancel the order, you must cancel the loan No.",
+          "2": "To cancel a order, go to it by clicking the '${buttonCaption}' button, and from the ${menu} select '${cancelButton}'."
+        },
+        "ACTIVE_STAGE_MESSAGE": {
+          "CAPTION": "Found an active loan No.${id} at the stage",
+          "1": "From the current screen 'Select an offer', you need to go to an active loan by clicking on the button",
+          "2": "On the '${stageCaption}' screen at the bottom, click on the button",
+          "3": "Then you can cancel the basic order."
+        },
+        "CANCEL_TITLE": "Anuluj zamówienie",
+        "DEFAULT_CANCEL_TITLE": "Anuluj wybraną ofertę banku",
+        "CANCEL_CONTENT": "Uwaga! Kontynuacja tego wniosku nie będzie możliwa.",
+        "DEFAULT_CANCEL_CONTENT": "Uwaga! Kontynuacja tego wniosku nie będzie możliwa.",
+        "CANCEL_BUTTON": "Anuluj",
+        "CANCEL_ERROR": "Anuluj błąd",
+        "CANCEL_REASON": "Przyczyna anulacji",
+        "NEED_CANCEL_REASON": "Potrzebujesz powodu anulowania",
+        "HELP_TEXT": "Zamówienie zostanie anulowane. Kontynuacja pracy z tym zamówieniem nie będzie już możliwa.",
+        "RETURN_BUTTON": "Powrót",
+        "COMMENT": "Uwagi"
+      },
+      "HELP": {
+        "TEXT": "Jeśli potrzebujesz pomocy w wypełnieniu wniosku w dowolnym momencie, możesz zadzwonić za darmo na {{phone}}.",
+        "HELP_BUTTON": "Pomoc"
+      },
+      "HISTORY_DIALOG": {
+        "CAPTION": "Order's history",
+        "MAIN_ORDER": "Main order",
+        "CREDIT": "Credit",
+        "OWNER": "Owner",
+        "SCOPE": "Main scope",
+        "STAGE": "Stage",
+        "ERROR": "Error",
+        "PHONE": "phone",
+        "HOTLINE": "hot line",
+        "ORDER_SCOPES": "Main scopes",
+        "MAIN": "main"
+      }
+    },
+    "STEPS": {
+      "CART": {
+        "STEPPER_CAPTION": "Koszyk",
+        "CAPTION": "Lista produktów",
+        "ADD": "Dodaj przedmiot",
+        "CATEGORY": "Kategoria",
+        "BRAND": "Marka",
+        "MODEL": "Model",
+        "PRICE": "Cena",
+        "TOTAL": "Razem"
+      },
+      "CALC": {
+        "STEPPER_CAPTION": "Kalkulator",
+        "STEPPER_ONLINE_CAPTION": "Klient",
+        "STEPPER_CONDITION_BLOCK_CAPTION": "Kalkulator",
+        "SELECT_CATEGORY": "Wybierz kategorię",
+        "PRECALC_WARNING": "* Przybliżona kalkulacja. Parametry ofert bankowych mogą się różnić",
+        "NO_PRODUCTS_FOUND": "Nie znaleziono produktów kredytowych dla żądanych warunków",
+        "PAYMENT": "Płatność Miesięczna",
+        "PAYMENT_ESTIMATION": "Kalkulacja miesięcznej płatności*",
+        "OVERPAYMENT": "Nadpłata",
+        "INIT_AMOUNT": "Kwota początkowa",
+        "PERIOD_MONTHS": "Okres",
+        "CART_TOTAL": "Całkowita wartość koszyka",
+        "CREDIT_AMOUNT": "Kwota kredytu",
+        "CATEGORY": "Kategoria",
+        "CHOOSE_CATEGORY": "Proszę wybrać kategorię kredytową!",
+        "INDICATE_INIT_AMOUNT": "Wskaż kwotę początkową (0 jeśli zero)",
+        "INDICATE_CREDIT_PERIOD": "Wskaż okres kredytowania",
+        "INTEREST_RATE": "Oprocentowanie",
+        "OPENING_COMMISSION": "Komisja Otwarcia"
+      },
+      "CLIENT": {
+        "STEPPER_CAPTION": "Klient",
+        "SECTION_DOCUMENT": {
+          "CAPTION": "Dokumenty identyfikacyjne",
+          "TYPE": "Typ dokumentu",
+          "NUMBER": "Numer",
+          "EXP_DATE": "Ważne do"
+        },
+        "SECTION_CLIENT": {
+          "CAPTION": "Dane osobowe",
+          "FIRSTNAME": "Imię",
+          "LASTNAME1": "Imię ojca",
+          "LASTNAME2": "Nazwisko panieńskie matki",
+          "SEX": "Płeć",
+          "BIRTH_DATE": "Data urodzenia",
+          "CITIZENSHIP": "Obywatelstwo",
+          "BIRTH_COUNTRY": "Kraj urodzenia",
+          "BIRTH_PLACE": "Miejsce urodzenia",
+          "MARITAL_STATUS": "Stan cywilny",
+          "INVALIDITY": "Orzeczenie o niepełnosprawności",
+          "CHILDREN_NUM": "Liczba dzieci na utrzymaniu"
+        },
+        "SECTION_CONTACTS": {
+          "CAPTION": "Kontakty",
+          "MOBILE_PHONE": "Telefon komórkowy",
+          "HOME_PHONE": "Telefon domowy",
+          "EMAIL": "e-mail",
+          "PDA_CHECKBOX_TEXT": "Umowa powierzenia przetwarzania danych osobowych",
+          "PDA_CHECKBOX_COMMENT1": "Zaznaczając to pole, potwierdzasz, że zaakceptowałeś",
+          "PDA_CHECKBOX_COMMENT2": "i",
+          "PDA_CHECKBOX_COMMENT3": ". Wyrażasz również zgodę na poinformowanie Klienta o tym, że jego dane osobowe zostaną udostępnione JO1N Polska sp. z o.o. w celu weryfikacji tożsamości w ramach wniosku oraz zostaną udostępnione pożyczkodawcom zatwierdzonym przez JO1N w celu bezpiecznego dokończenia zakupu, jak również mogą być udostępniane osobom trzecim w celu oferowania dodatkowych usług",
+          "PRIVACY_POLICY": "Polityka prywatności",
+          "TERMS_LINK": "Warunki korzystania z usługi"
+        }
+      },
+      "PDA": {
+        "STEPPER_CAPTION": "PDA"
+      },
+      "WORK": {
+        "STEPPER_CAPTION": "Dochody",
+        "SECTION_WORKPLACE": {
+          "CAPTION": "Informacje o zatrudnieniu",
+          "EMPLOYMENT_TYPE": "Rodzaj zatrudnienia",
+          "WORK_ACTIVITY": "Sektor zatrudnienia",
+          "WORK_TITLE": "Zawód",
+          "TYPE_OF_CONTRACT": "Rodzaj umowy",
+          "WORK_BEGIN_DATE": "Data rozpoczęcia doświadczenia zawodowego",
+          "EMPLOYER_NAME": "Nazwa pracodawcy",
+          "WORK_DIRECTION": "Kod CNO",
+          "WORK_BRANCH": "Kod CNEA",
+          "WORK_PHONE": "Telefon służbowy",
+          "ACTIVITY_SECTOR": "Sektor działalności"
+        },
+        "SECTION_INCOME": {
+          "CAPTION": "Informacje finansowe",
+          "ACCOUNT_HOLDER": "Posiadacz konta",
+          "ACCOUNT_DATE": "Data otwarcia konta",
+          "ACCOUNT_IBAN": "IBAN konta",
+          "INCOME_AMOUNT": "Dochód klienta",
+          "ADDITIONAL_INCOME": "Inne dochody",
+          "HOUSING_PAYMENTS": "Utrzymanie gospodarstwa domowego",
+          "LOAN_PAYMENTS": "Suma rat pożyczek, kredytów itp.",
+          "MORTGAGE_PAYMENTS": "Płatności hipoteczne",
+          "ANNUAL_PAYMENTS": "Płatności roczne"
+        }
+      },
+      "HOUSING": {
+        "STEPPER_CAPTION": "Sytuacja mieszkaniowa",
+        "SECTION_ADVANCED": {
+          "CAPTION": "Informacje zaawansowane",
+          "HOUSING": "Aktualna sytuacja mieszkaniowa",
+          "HOUSING_ENTER_DATE": "Data zamieszkania pod adresem",
+          "CITY_ENTER_DATE": "Data zamieszkania w mieście",
+          "CITY_ENTER_DATE_HINT": "Możesz podać przybliżoną wartość",
+          "PUBLIC_PERSON": "Osoba publiczna"
+        },
+        "SECTION_ADDRESS": {
+          "CAPTION": "Adres korespondencyjny",
+          "POSTAL_CODE": "Kod pocztowy",
+          "PROVINCE": "województwo",
+          "TOWN": "Miejscowość",
+          "SEE_TYPE": "Typ ulicy",
+          "SEE_NAME": "Nazwa ulicy",
+          "SEE_NUMBER": "Numer domu",
+          "STAIRS": "Piętro",
+          "FLOOR": "Piętro",
+          "DOOR": "Nr. mieszkania"
+        }
+      },
+      "OFFERS": {
+        "LOAN_OFFERS": "Oferty kredytowe",
+        "INTEREST_RATE": "Oprocentowanie",
+        "OPENING_COMMISSION": "Prowizja otwarcia",
+        "PERIOD_MONTHS": "Okres",
+        "PAYMENT": "Płatność",
+        "PAYMENT_DESCRIPTION": "kwota jest orientacyjna, dokładna kwota zostanie wskazana w harmonogramie płatności",
+        "LOADING_OFFERS": "Formują się zapytania do banków",
+        "DISABLED_OFFER_WARNING_MESSAGE": "Aby wybrać ten bank, musisz najpierw anulować pożyczkę dla banku",
+        "COMMISION": "Prowizja"
+      }
+    },
+    "COMPONENTS": {
+      "ATTACHES": {
+        "MOBILE_LOADING": "Kliknij, aby uzyskać dostęp do kodu QR",
+        "IMAGE_PROCESSING": "Przetwarzanie obrazu",
+        "ACCEPTED_STATUS": "PRZYJĘTY",
+        "ERROR_STATUS": "BŁĄD",
+        "NOT_CHECKED_STATUS": "NIESPRAWDZONE",
+        "ATTACHES_LOADING": "Wczytuję listę skanów",
+        "EMPTY_ATTACHES_LIST": "Lista skanów jest pusta",
+        "SENDING_FOR_REVIEW": "Wysyłam do recenzji",
+        "ERRORS": {
+          "FILE_SAVING_ERROR": "Błąd zapisu pliku",
+          "FILE_ID_NOT_FOUND": "Nie znaleziono identyfikatora pliku",
+          "FILE_CHECKING_ERROR": "Błąd sprawdzania pliku",
+          "NEDD_TO_RE-ATTACH": "Trzeba ponownie załączyć",
+          "SCANS_LOADING_ERROR": "Błąd ładowania skanów",
+          "IMAGE_PROCESSING_ERROR": "Błąd przetwarzania obrazu",
+          "SENDING_FOR_REVIEW_ERROR": "Błąd wysyłania do recenzji",
+          "PDF_REQUIRED": "Do tego typu skanu musisz przesłać dokument w formacie pdf",
+          "TO_BIG_FILE": "Rozmiar pliku nie może przekraczać 2 MB"
+        }
+      },
+      "CREDIT_DOCS": {
+        "SHOW_ALL_DOCS": "Pokaż listę dokumentów",
+        "DOWNLOAD": "ŚCIĄGNIJ",
+        "DOCUMENTS": "dokumenty"
+      },
+      "SINGLE_PDF": {
+        "PRINT_DOCS": "Drukuj dokumenty",
+        "DOCS_LOADING": "Ładowanie dokumentów",
+        "DOCS_LOADING_ERROR": "Błąd podczas ładowania pojedynczego pliku PDF"
+      },
+      "TAKE_TO_WORK": {
+        "ERROR_TITLE": "Błąd podczas zabierania do pracy",
+        "OWNER_ERROR": "Nie możesz przyjąć tego zamówienia do pracy, ponieważ ma ono Właściciela.",
+        "LOAN_ERROR": "Błąd podczas zaciągania pożyczki na pracę nr {{ORDER_ID}}"
+      }
+    },
+    "CALCULATOR": "Kalkulator dla klienta",
+    "CALCULATOR_FOR_SHOP": "Kalkulator dla sklepu"
+  },
+  "ES_POS_LOAN": {
+    "CREDITS_ALL": "Loans (all)",
+    "CREDITS_PM": "Loans",
+    "LOAN_NUM": "Loan #",
+    "CHECK_ATTACHES_ONLINE": "Przyjęliśmy Twoje zamówienie. Skontaktuje się z Tobą agent. Poczekaj na telefon.",
+    "DO_NOT_PASS_GOODS_TO_CLIENT": "Nie przekazuj towaru kupującemu. Bank nie zatwierdził jeszcze kredytu.",
+    "PASS_GOODS_TO_CLIENT_ONLINE": "Bank zatwierdził pożyczkę.",
+    "PASS_GOODS_TO_CLIENT": "Towar może zostać przekazany kupującemu. Bank zatwierdził pożyczkę.",
+    "ON_REFUND_MESSAGE": "The support service is currently engaged in canceling your loan. If you have any questions about the cancellation of this loan, please contact the hotline",
+    "SCANS_AND_PHOTO": "Skany i zdjęcia",
+    "BACK_TO_SHOP": "Powrót do sklepu",
+    "BUTTONS": {
+      "SALED": "Sprzedane",
+      "SEND_DOCUMENTS_EMAIL": "WYŚLIJ CERTYFIKAT GWARANCYJNY (e-mail)"
+    },
+    "STAGE_BUTTON": {
+      "CREATE": "Wybierać",
+      "PRESIGN": "Wybór",
+      "SIGN": "Podpisać",
+      "END": "Sprzedany",
+      "CANCEL": "Anuluj",
+      "CHECKATTACHESBANK": "Sprawdzanie załączników",
+      "FIXATTACHESBANK": "Błędy w załączeniu",
+      "GOODATTACHESBANK": "Gotowy na sprzedaż",
+      "REFUND": "Zwrócone",
+      "FORREFUND": "Do zwrotu",
+      "FORREFUNDBANK": "Dla banku zwrotu",
+      "PRESIGNERROR": "Błąd przed podpisem",
+      "SIGNERROR": "Zarejestruj błąd",
+      "SIGNDECLINE": "Bank declined",
+      "SELECT": "Wybierz",
+      "PRESIGNDROP": "Upuszczanie przed podpisem",
+      "SIGNDROP": "Upuść znak"
+    },
+    "STAGE_TITLE": {
+      "PRESIGN": "Wybór",
+      "SIGN": "Podpisz dokumenty",
+      "END": "Sprzedany",
+      "CANCEL": "Anuluj",
+      "CHECKATTACHESBANK": "Sprawdzanie załączników",
+      "FIXATTACHESBANK": "Błędy w załączeniu",
+      "GOODATTACHESBANK": "Gotowy na sprzedaż",
+      "GOODATTACHESBANK_ONLINE": "Pożyczka udzielona",
+      "REFUND": "Zwrócone",
+      "FORREFUND": "Do zwrotu",
+      "FORREFUNDBANK": "Dla banku zwrotu",
+      "PRESIGNERROR": "Błąd przed podpisem",
+      "SIGNERROR": "Zarejestruj błąd",
+      "SIGNDECLINE": "Bank declined",
+      "PRESIGNDROP": "Upuszczanie przed podpisem",
+      "SIGNDROP": "Upuść znak"
+    },
+    "SPINNER": {
+      "CONTRACT_SIGN": "Autoryzacja umowy...",
+      "CHECK_ATTACHES": "Sprawdzanie załączników...",
+      "SELECT_OFFER": "Wybieram ofertę..."
+    },
+    "LABELS_SELECT_SEARCH": {
+      "FIND_CITIZENSHIP": "Znajdź obywatelstwo...",
+      "NOT_FOUND_CITIZENSHIP": "Nie znaleziono obywatelstwa",
+      "FIND_BIRTH_COUNTRY": "Znajdź kraj urodzenia...",
+      "NOT_FOUND_BIRTH_COUNTRY": "Nie znaleziono kraju urodzenia..."
+    },
+    "ERRORS": {
+      "CONTRACT_SIGN": "Błąd autoryzacji umowy",
+      "CHECK_ATTACHES_NO_MANDATORY": "Nie znaleziono obowiązkowych załączników:",
+      "CHECK_ATTACHES_BACKEND_ERROR": "Błąd podczas sprawdzania załączników",
+      "BANKDECLINE": "Odmowa",
+      "OFFER_SELECTION_ERROR": "Błąd przy wyborze oferty",
+      "TRY_LATER": "Spróbuj wybrać ponownie za kilka minut"
+    },
+    "CANCEL_BUTTON": {
+      "CANCEL_TITLE": "Anuluj pożyczkę",
+      "DEFAULT_CANCEL_TITLE": "Anuluj wybraną ofertę banku",
+      "CANCEL_CONTENT": "Uwaga! Kontynuacja pracy z tym kredytem nie będzie już możliwa.",
+      "DEFAULT_CANCEL_CONTENT": "UWAGA! Po anulowaniu wybranej oferty nie będziesz mógł ponownie wybrać tego samego banku we wniosku kredytowym.",
+      "CANCEL_BUTTON": "Anuluj",
+      "CANCEL_ERROR": "Anuluj błąd",
+      "CANCEL_REASON": "Anuluj powód",
+      "NEED_CANCEL_REASON": "Potrzebujesz powodu anulowania",
+      "HELP_TEXT": "Pożyczka zostanie anulowana. Kontynuacja pracy z tym kredytem nie będzie już możliwa.",
+      "RETURN_BUTTON": "Zwrócić",
+      "COMMENT": "Komentarz"
+    },
+    "CREDIT_INFO": {
+      "BANK": "Bank",
+      "CREDIT_AMOUNT": "Kwota kredytu",
+      "CREDIT_AMOUNT_FORM_COMPANY": "Kwota kredytu dla firmy",
+      "INIT_AMOUNT": "Kwota początkowa",
+      "PAYMENT_NUM": "Miesiąc miesiąc",
+      "SMS_SIGN_REQUIRED": "Wymagany znak SMS",
+      "CONTRACT_NUMBER": "Numer kontaktowy",
+      "AUTH_CODE": "Kod autoryzacji",
+      "GOODS": "Dobra",
+      "PARTNER_SERVICES": "Usługi partnerskie",
+      "AUTH_ERROR": "Błąd autoryzacji",
+      "SMS": "SMS",
+      "NO_SMS": "Brak SMS-ów"
+    },
+    "DOCS": {
+      "LOAN_AGREEMENT": "Umowa pożyczki"
+    },
+    "REFUND": {
+      "REASON": "Powód",
+      "COMMENT": "Komentarz",
+      "REFUND_BUTTON": "Zwrot kredytu",
+      "SUCCESS_TITLE": "Twój formularz został wysłany do sprawdzenia.",
+      "SUCCESS_TEXT": "Specjalista wsparcia technicznego JO1N skontaktuje się z Tobą wkrótce, aby przekazać dalsze instrukcje.",
+      "TO_FOR_REFUND": "Do zwrotu",
+      "TO_FOR_REFUND_BANK": "Dla banku zwrotu",
+      "TO_REFUND": "Zwrot"
+    }
+  },
+  "ES_POS_LOAN_SIGN": {
+    "REFRESH_DOCS_CONFIRM": "Zażądaj regeneracji dokumentów? Nie możesz cofnąć tej akcji!",
+    "SIGN_STEPS": {
+      "PRINT_DOCS_HEAD": "Drukuj i podpisuj dokumenty",
+      "ATTACHES_HEAD": "Prześlij dokumenty",
+      "SIGN_IN_BANK_HEAD": "Podpisz dokumenty w banku",
+      "ABANCA_DOCS_HEAD": "Poczekaj, aż pożyczkobiorca pobierze i podpisze dokumenty",
+      "ABANCA_DOCS_HEAD_ONLINE": "Umowa została wysłana na Twój e-mail. Aby kontynuować podpisywanie, przejrzyj pliki i potwierdź odpowiednie uprawnienia.",
+      "ABANCA_SMS_CODE_HEAD": "Kliknij przycisk \"Wyślij kod SMS\". Pożyczkobiorca otrzyma kod na swój telefon komórkowy. Kod ten należy wpisać w polu \"Kod SMS\".",
+      "ABANCA_SMS_CODE_HEAD_ONLINE": "Kliknij \"Wyślij kod SMS\". Wpisz otrzymany kod w polu \"Kod SMS\" i kliknij \"Podpisz\"."
+    },
+    "PLACEHOLDERS": {
+      "SMS_CODE": "Kod SMS"
+    },
+    "LOAN_CANCEL_DIALOG": {
+      "TITLE": "Wróć do wyboru oferty",
+      "CONTENT": "UWAGA! Kontynuacja pracy z tą umową nie będzie już możliwa.",
+      "YES_BUTTON_TEXT": "Anuluj przejście"
+    },
+    "REFUSE_TO_SIGN_HELP_DIALOG": {
+      "TITLE": "Odmów podpisania",
+      "CONTENT": "Kliknięcie tego przycisku spowoduje powrót do ekranu wyboru oferty i umożliwi wybór innego banku. Wielokrotny wybór tego samego banku będzie niedostępny"
+    },
+    "SIGN_IN_BANK_DIALOG": {
+      "TITLE": "Przejdź do strony internetowej banku do podpisania",
+      "TITLE_MOBILE": "Zaloguj się na stronie banku",
+      "CONTENT": "Zezwól JO1N.COM na dostęp do wyskakujących okienek i łączy, aby ta wiadomość nie pojawiała się ponownie. Aby kontynuować podpisywanie na stronie banku, kliknij \"Strona WWW banku\"",
+      "SIGN_BUTTON_TEXT": "Strona internetowa Banku"
+    },
+    "BUTTONS": {
+      "CLOSE": "Zamknij",
+      "CLOSE_WINDOW": "Zamknij",
+      "TO_SIGN": "Przejdź do podpisywania",
+      "PRINT_DOCS": "DOKUMENTACJA",
+      "PRINT_PDA": "PDA",
+      "REFRESH_DOCS": "POWTARZAĆ",
+      "INSTRUCTION": "INSTRUKCJA",
+      "CANCEL": "Anuluj umowę",
+      "SIGN_IN_BANK": "Przejdź do podpisywania w banku",
+      "SIGN": "Wystawić pożyczkę",
+      "SEND_SMS_CODE": "Wyślij kod SMS",
+      "REFUSE_TO_SIGN": "Odmów podpisania",
+      "SEND_FOR_CHECK_ATTACHES": "Prześlij do ponownego sprawdzenia"
+    },
+    "REDIRECT_POPUP": {
+      "HEAD": "",
+      "MESSAGE": "W przypadku prawdziwego banku zobaczysz link do strony internetowej banku do podpisania umowy"
+    },
+    "SPINNER": {
+      "LOAD_DATA": "Ładowanie danych...",
+      "TRANSITION_TO_SIGN": "Przejdź do podpisywania...",
+      "REFRESH_DOCS": "Żądanie dokumentu...",
+      "FORM_DOCS": "Formowanie dokumentów...",
+      "GET_DOCS": "Odbieranie dokumentów...",
+      "CONTRACT_SIGN": "Autoryzacja umowy...",
+      "CHECK_ATTACHES": "Sprawdzam skany...",
+      "SENDING_SMS": "Wysyłanie SMS-a...",
+      "BACK_TO_OFFER_SELECTION": "Powrót do wyboru oferty...",
+      "SENDING_FOR_VERIFICATION": "Sending for verification..."
+    },
+    "ERRORS": {
+      "COMMON_ERROR_HINT": "Zadzwoń do pomocy technicznej JO1N pod numer +34911233764, aby naprawić błąd",
+      "PRE_SIGN_LOAD_DATA": "Błąd podczas ładowania danych",
+      "REFRESH_DOCS": "Błędy przeformułowania dokumentów",
+      "LOAD_DATA": "Błąd podczas odbierania pakietu danych do udzielenia pożyczki",
+      "CHECK_ATTACHES_NO_MANDATORY": "Nie wszystkie wymagane skany są dołączone:",
+      "CHECK_ATTACHES_BACKEND_ERROR": "Błąd podczas sprawdzania skanów:",
+      "TRANSITION_TO_SIGN": "Wystąpił błąd podczas podpisywania!",
+      "CONTRACT_SIGN": "Błąd autoryzacji!",
+      "ENTER_SMS_CODE": "Wpisz kod SMS",
+      "STARTING_SMS_SIGNING": "Błąd podczas rozpoczynania podpisywania SMS-ów",
+      "SAVING_SMS_CODE": "Błąd podczas zapisywania kodu SMS!",
+      "REFUSE_TO_SIGN": "Błąd podczas przerywania przejścia do podpisywania",
+      "SIGN_DECLINE": "Application was rejected by the bank"
+    }
+  },
+  "ERRORS": {
+    "ERROR": "Error",
+    "COMMON.TRYAGAIN": "Error occured, please try again few minutes later or call the hotline",
+    "MUST_BE_9_LETTER_OR_DIGITS": "must be 9 letters/digits",
+    "MUST_BE_15_TO_32_LETTER_OR_DIGITS": "must be 15-32 letters/digits",
+    "MUST_START_WITH_2_LETTERS": "must start with 2 letters",
+    "MUST_BE_5_DIGITS": "must be 5 digits",
+    "MUST_BE_FILLED": "must be filled",
+    "MUST_BE_LESS_99": "no more than 99",
+    "INVALID_DATE": "invalid date",
+    "CHECK_DATE": "check date",
+    "REGISTRATION_FROM_18_YEARS": "Registration from the age of 18",
+    "INVALID_STAGE": "Invalid stage",
+    "FUTURE_DATE": "future date not allowed",
+    "NO_14_YEARS_YET": "must be at least 14 years old",
+    "BEFORE_BIRTH_DATE": "before the date of birth",
+    "MUST_CONTAIN_LETTERS_DASHES_SPACES": "only letters/dashes/spaces allowed",
+    "MUST_BE_VALID_EMAIL": "invalid email",
+    "MUST_BE_VALID_ES_PHONE": "invalid phone number",
+    "MUST_BE_VALID_ES_MOBILE_PHONE": "invalid mobile phone number",
+    "MUST_BE_1_OR_2_DIGITS": "Must be 1 or 2 digits",
+    "IBAN_IS_INVALID": "IBAN account is invalid"
+  },
+  "FAQ": {
+    "TITLE": "Często zadawane pytania",
+    "MANUAL_JO1N_EXPANDED": "Instrukcja obsługi systemu",
+    "MANUAL_ATTACH": "Instrukcja dotycząca załączników",
+    "MANUAL_ANULAR": "Jak anulować wniosek",
+    "MANUAL_CANCEL_LOAN_IN_JO1N": "Instrukcja anulacji wniosku",
+    "ABANCA": "INSTRUKCJA DO CYFROWEGO PODPISU UMOWY Z ABANCA",
+    "BANKINTER": "INSTRUKCJA DO CYFROWEGO PODPISU UMOWY Z BANKINTER",
+    "COFIDIS": "INSTRUKCJA DO CYFROWEGO PODPISU UMOWY Z COFIDIS",
+    "POST_FINANCING": "Postfinansowanie",
+    "PROCESS_CORRECT_WRONG_DOCUMENTATION": "Proces poprawiania błędnej dokumentacji"
+  },
+  "CALCULATOR_TABLE": {
+    "COST_POS": "BONUS POS",
+    "COMMISSION": "PROWIZJA",
+    "MONTHLY_FEE": "RATA MIESIĘCZNA",
+    "FIRST_INSTALLMENT": "WPŁATA WŁASNA",
+    "TERM_MONTHS": "ILOŚĆ RAT",
+    "RATE": "OFERTA",
+    "NOT_AVAILABLET_X_MONTH_PART1": "Brak oferty na ",
+    "NOT_AVAILABLET_X_MONTH_PART2": " miesięcy",
+    "RATE_X_NOT_AVAILBLE_PART1": "Oferta ",
+    "RATE_X_NOT_AVAILBLE_PART2": " jest niedostępna"
+  },
+  "ANALYTICS": {
+    "REPORTS": {
+      "MENU": "Reports",
+      "TYPES": {
+        "LUQIDATIONS": "Settlements",
+        "COMMISSIONS": "Commissions",
+        "PRE_INVOICE_1": "Pre-Invoice with escrow",
+        "PRE_INVOICE_2": "Pre-Invoice without escrow",
+        "VAS": "VAS"
+      }
+    }
+  }
+}

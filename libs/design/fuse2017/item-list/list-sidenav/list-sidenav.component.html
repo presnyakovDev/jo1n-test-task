@@ -1,0 +1,104 @@
+<!-- SIDENAV HEADER -->
+<div
+  fxLayout="column"
+  fxLayoutAlign="space-between start"
+  class="header p-24 md-accent-bg-2"
+  class.gt-md="header p-24 white-fg"
+>
+  <div class="logo" fxFlex fxLayout="row" fxLayoutAlign="start center">
+    <mat-icon
+      class="logo-icon s-32"
+      *fuseIfOnDom
+      [@animate]="{ value: '*', params: { delay: '50ms', scale: '0.2' } }"
+      svgIcon="layers"
+    ></mat-icon>
+    <span class="logo-text" *fuseIfOnDom [@animate]="{ value: '*', params: { delay: '100ms', x: '-25px' } }">{{
+      itemsTitle
+    }}</span>
+  </div>
+  <div *fuseIfOnDom [@animate]="{ value: '*', params: { delay: '100ms', x: '-25px' } }">{{ itemsDescription }}</div>
+</div>
+<!-- / SIDENAV HEADER -->
+
+<!-- SIDENAV CONTENT -->
+<div class="content" fusePerfectScrollbar *fuseIfOnDom [@animate]="{ value: '*', params: { y: '50px' } }">
+  <div class="p-24" *ngIf="specs.addItemDisableReason || specs.addItemEnabled">
+    <span *ngIf="specs.addItemDisableReason">
+      {{ specs.addItemDisableReason }}
+    </span>
+    <button
+      mat-raised-button
+      fxFlex
+      *ngIf="!specs.addItemDisableReason"
+      class="mat-accent add-item-button"
+      (click)="addItem()"
+    >
+      + ДОБАВИТЬ
+    </button>
+  </div>
+
+  <div class="nav" *ngIf="specs?.filters">
+    <ng-container *ngFor="let filter of specs.filters">
+      <ng-container *ngIf="!filter.hidden">
+        <ng-container *ngIf="filter.showAsPresetsList">
+          <div class="nav-item mt-24">
+            <a class="nav-link h-32">
+              <mat-icon class="grey mr-8" svgIcon="filter_list_color"></mat-icon>
+              {{ filter.caption }}
+            </a>
+          </div>
+
+          <div>
+            <mat-list class="presets-list">
+              <mat-list-item
+                *ngFor="let item of filter.presets"
+                matRipple
+                [class.selected]="item.value === filter.selectedValue.value"
+                (click)="filter.selectedValue = item; setFilter(filter)"
+              >
+                {{ item.caption }}
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="!filter.showAsPresetsList">
+          <div class="nav-item mt-24">
+            <a class="nav-link h-32" matRipple (click)="setFilter(filter)">
+              <mat-icon class="grey mr-8" svgIcon="filter_list_color"></mat-icon>
+              {{ filter.caption }}
+            </a>
+          </div>
+
+          <div style="padding-left: 28px; padding-right: 24px" *ngIf="filter.selectedValue">
+            <mat-chip-list #chipList class="mat-chip-list-stacked" aria-orientation="vertical">
+              <mat-chip
+                fxLayout="row"
+                matRipple
+                fxLayoutAlign="space-between center"
+                class="mb-4"
+                (click)="setFilter(filter)"
+              >
+                <div fxFlex>
+                  {{
+                    filter.selectedValue.translationKey
+                      ? (filter.selectedValue.translationKey | translate)
+                      : filter.selectedValue.caption
+                  }}
+                </div>
+                <div fxFlex="16" class="div-chip-remove" *ngIf="!filter.disableClose">
+                  <mat-icon
+                    matChipRemove
+                    class="grey"
+                    (click)="removeFilter(filter)"
+                    svgIcon="cancel_black_sm"
+                  ></mat-icon>
+                </div>
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+<!-- / SIDENAV CONTENT -->

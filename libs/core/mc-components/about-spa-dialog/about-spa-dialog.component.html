@@ -1,0 +1,21 @@
+<h1 matDialogTitle>{{ 'SYSTEM_INFORMATION_DIALOG.TITLE' | translate }}</h1>
+<div mat-dialog-content class="system-information">
+  {{ 'SYSTEM_INFORMATION_DIALOG.VERSION_WEB_APP' | translate }}: <b>{{ spaVersion }}</b>
+</div>
+<div mat-dialog-content class="system-information">
+  {{ 'SYSTEM_INFORMATION_DIALOG.VERSION_BROWSER' | translate }}: <b>{{ browser }}</b>
+</div>
+<div mat-dialog-content class="system-information">
+  {{ 'SYSTEM_INFORMATION_DIALOG.OPERATING_SYSTEM' | translate }}: <b>{{ os }}</b>
+</div>
+<div mat-dialog-content class="system-information">
+  {{ 'SYSTEM_INFORMATION_DIALOG.BROWSER_WINDOW_SIZE' | translate }}: <b>{{ browserWindowSize }}</b>
+</div>
+<div mat-dialog-content class="system-information">
+  {{ 'SYSTEM_INFORMATION_DIALOG.WINDOW_RESOLUTION' | translate }}: <b>{{ screenSize }}</b>
+</div>
+<div mat-dialog-actions class="pt-24 button-container">
+  <button mat-raised-button (click)="dialogRef.close(false)">
+    {{ 'SYSTEM_INFORMATION_DIALOG.TITLE_BUTTON_CLOSE' | translate }}
+  </button>
+</div>

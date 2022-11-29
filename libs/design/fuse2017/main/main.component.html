@@ -1,0 +1,21 @@
+<mat-sidenav-container>
+  <div id="fuse-main-content" fxFlexFill>
+    <div id="wrapper">
+      <fuse-navbar-vertical
+        *ngIf="fuseSettings.layout.navigation === 'left'"
+        [folded]="false"
+        fxShow
+        class="left-navbar md-fuse-dark-500-bg"
+      ></fuse-navbar-vertical>
+      <div class="content-wrapper">
+        <fuse-toolbar
+          *ngIf="fuseSettings.layout.toolbar === 'below'"
+          class="below md-white-500-bg"
+          [shopPointCaption]="shopPointCaption"
+          [spa]="spa"
+        ></fuse-toolbar>
+        <fuse-content [ngClass]="fuseSettings.background ? 'background' : ''"></fuse-content>
+      </div>
+    </div>
+  </div>
+</mat-sidenav-container>

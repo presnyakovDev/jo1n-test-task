@@ -1,0 +1,288 @@
+@import '../fuse';
+
+.table-host {
+  flex: 1;
+
+  .mat-paginator-page-size {
+    display: none;
+  }
+
+  .mat-table {
+    text-align: left;
+    background: transparent;
+    box-shadow: none;
+
+    .mat-column-lastName {
+      flex: 0 1 200px;
+      @include media-breakpoint('gt-sm') {
+        flex: 2 1 200px;
+      }
+      .text-truncate {
+        white-space: normal !important;
+        padding-right: 16px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+    }
+
+    .mat-column-caption {
+      flex: 0 1 200px;
+      @include media-breakpoint('gt-sm') {
+        flex: 3 1 200px;
+      }
+      .text-truncate {
+        white-space: normal !important;
+        padding-right: 16px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+    }
+
+    .mat-column-pointCaption {
+      flex: 0 1 200px;
+      @include media-breakpoint('gt-sm') {
+        flex: 3 1 200px;
+      }
+      .text-truncate {
+        white-space: normal !important;
+        padding-right: 16px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+    }
+
+    .mat-column-description {
+      flex: 0 1 160px;
+      @include media-breakpoint('gt-sm') {
+        flex: 2 2 160px;
+      }
+    }
+
+    .mat-column-salesGroup {
+      flex: 0 1 140px;
+      @include media-breakpoint('gt-sm') {
+        flex: 2 2 160px;
+      }
+    }
+
+    .mat-column-inn {
+      flex: 0 1 120px;
+      @include media-breakpoint('gt-lg') {
+        flex: 1 1 120px;
+      }
+    }
+
+    .mat-column-partnerCaption {
+      flex: 0 1 160px;
+      @include media-breakpoint('gt-sm') {
+        flex: 2 1 160px;
+      }
+    }
+
+    .mat-column-companyCaption {
+      flex: 0 1 180px;
+      @include media-breakpoint('gt-sm') {
+        flex: 2 1 180px;
+      }
+      .text-truncate.with-inn {
+        margin-bottom: -6px !important;
+      }
+      .text-truncate {
+        white-space: normal !important;
+        padding-right: 8px;
+      }
+      .secondary-text {
+        font-size: 10px;
+      }
+    }
+
+    .mat-column-infoStatusCaption {
+      flex: 0 1 90px;
+      @include media-breakpoint('gt-lg') {
+        flex: 1 1 90px;
+      }
+    }
+
+    .mat-column-status {
+      flex: 0 1 100px;
+      @include media-breakpoint('gt-lg') {
+        flex: 1 1 100px;
+      }
+    }
+
+    .mat-column-anketStatus {
+      flex: 0 1 80px;
+      @include media-breakpoint('gt-lg') {
+        flex: 1 1 80px;
+      }
+    }
+
+    .mat-row {
+      position: relative;
+      cursor: pointer;
+      padding-right: 8px;
+
+      .mat-cell {
+        min-width: 0;
+
+        &.mat-column-detail-button {
+          flex: 0 1 auto;
+          padding: 0 24px 0 0;
+          @include media-breakpoint('gt-md') {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mc-codes-table {
+  background: white;
+  width: 100%;
+  max-width: 1400px;
+  border-collapse: collapse;
+  margin-top: 12px;
+
+  .mc-cell,
+  .mc-header-cell {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  .mc-header-row {
+    height: 36px;
+  }
+
+  .mc-header-row,
+  .mc-row {
+    display: table-row;
+    align-items: center;
+    min-height: 48px;
+    padding: 4px 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .item-column {
+    flex: 3 2 300px;
+    padding: 4px 8px;
+    min-width: 250px;
+  }
+
+  .status-column {
+    flex: 1 1 100px;
+    text-align: center;
+    padding: 4px 8px;
+  }
+
+  .parent-column {
+    flex: 2 2 200px;
+    text-align: center;
+    padding: 4px 8px;
+  }
+
+  .mc-cell.parent-column {
+    font-size: 10px !important;
+    color: #888 !important;
+  }
+
+  .bank-column {
+    text-align: center;
+    padding: 4px 8px;
+    flex: 1 1 100px;
+  }
+
+  .mc-inactive .mc-cell {
+    color: red;
+  }
+}
+
+.mc-codes2-table-container {
+  overflow: auto;
+  max-height: calc(100vh - 64px - 120px - 48px);
+}
+
+.mc-codes2-table-container.paged {
+  overflow: auto;
+  max-height: calc(100vh - 64px - 120px - 48px - 154px);
+}
+
+.mc-codes2h-table-container {
+  overflow: auto;
+  margin-top: 12px;
+
+  .mc-codes2-table {
+    width: auto;
+  }
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.mc-codes2-table {
+  background: white;
+  border-collapse: collapse;
+
+  .mc-inactive .mc-cell {
+    color: red;
+  }
+
+  .mc-cell,
+  .mc-header-cell {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  .mc-header-row {
+    height: 36px;
+  }
+
+  .mc-header-row,
+  .mc-row {
+    display: table-row;
+    align-items: center;
+    min-height: 48px;
+    padding: 4px 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .item-column {
+    min-width: 200px;
+    padding: 4px 8px 4px 8px;
+  }
+
+  .status-column {
+    width: 80px;
+    text-align: center;
+    padding: 4px 8px;
+  }
+
+  .select-column {
+    width: 60px;
+    text-align: center;
+    padding: 4px 8px !important;
+  }
+
+  .parent-column {
+    min-width: 250px;
+    padding: 4px 8px;
+    font-size: 75%;
+  }
+
+  .mc-cell.parent-column {
+    color: #888 !important;
+  }
+
+  .bank-column {
+    text-align: center;
+    padding: 4px 8px;
+    flex: 1 1 100px;
+  }
+}

@@ -1,0 +1,12 @@
+<div class="group-title">
+  <span class="hint-text">{{ item.translationKey ? (item.translationKey | translate) : item.title }}</span>
+</div>
+<div class="group-items">
+  <ng-container *ngFor="let item of item.children">
+    <fuse-nav-vertical-group *ngIf="item.type == 'group'" [item]="item"></fuse-nav-vertical-group>
+    <fuse-nav-vertical-collapse *ngIf="item.type == 'collapse'" [item]="item"></fuse-nav-vertical-collapse>
+    <fuse-nav-vertical-item *ngIf="item.type == 'item'" [item]="item"></fuse-nav-vertical-item>
+    <mc-nav-vertical-button *ngIf="item.type == 'button'" [item]="item"></mc-nav-vertical-button>
+    <mc-nav-vertical-bonus *ngIf="item.type == 'bonus'" [item]="item"></mc-nav-vertical-bonus>
+  </ng-container>
+</div>

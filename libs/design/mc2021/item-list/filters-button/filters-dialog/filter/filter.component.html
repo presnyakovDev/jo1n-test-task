@@ -1,0 +1,18 @@
+<div class="filter" fxLayout="column">
+  <button class="filter-name" (click)="onClickFilter()">
+    {{ filter.caption }}
+  </button>
+
+  <div class="value" fxLayout="row" *ngIf="filter.selectedValue" (click)="onClickFilter()">
+    <div>
+      {{
+        filter.selectedValue.translationKey
+          ? (filter.selectedValue.translationKey | translate)
+          : filter.selectedValue.caption
+      }}
+    </div>
+    <div class="div-chip-remove" *ngIf="!filter.disableClose" (click)="onRemoveFilter()">
+      <mat-icon class="grey" svgIcon="cancel_black_sm" inline="true"></mat-icon>
+    </div>
+  </div>
+</div>

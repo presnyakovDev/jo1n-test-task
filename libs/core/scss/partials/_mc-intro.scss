@@ -1,0 +1,47 @@
+.introjs-tooltip.tip {
+  max-width: none;
+
+  .introjs-donebutton {
+    background-color: #080;
+    background-image: none;
+    text-shadow: none;
+    color: white;
+  }
+
+  .introjs-donebutton:hover {
+    background-color: #080;
+    background-image: none;
+    text-shadow: none;
+    color: white;
+  }
+}
+
+.introjs-tooltip.intro {
+  .introjs-nextbutton {
+    background-color: #080;
+    background-image: none;
+    text-shadow: none;
+    color: white;
+  }
+
+  .introjs-nextbutton:hover {
+    background-color: #080;
+    background-image: none;
+    text-shadow: none;
+    color: white;
+  }
+
+  .introjs-nextbutton.introjs-disabled {
+    background-color: #f4f4f4;
+    background-image: none;
+    text-shadow: none;
+    color: #9a9a9a;
+  }
+
+  .introjs-nextbutton.introjs-disabled:hover {
+    background-color: #f4f4f4;
+    background-image: none;
+    text-shadow: none;
+    color: #9a9a9a;
+  }
+}

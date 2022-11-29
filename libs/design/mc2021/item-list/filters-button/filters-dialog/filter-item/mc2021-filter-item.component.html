@@ -1,0 +1,53 @@
+<div class="filter-item" fxLayout="column">
+  <div class="filter-name">
+    <span>{{ filter.caption }}</span>
+
+    <button
+      class="clear-filter"
+      *ngIf="
+        filter.getItems && !filter.disableClose && ((filter.selectedValue && filter.getItems) || filter.checkedValue)
+      "
+      (click)="clearFilter()"
+    >
+      {{ 'COMMON.CANCEL' | translate }}
+    </button>
+
+    <ng-container *ngIf="!filter.getItems">
+      <div fxLayout="row" *ngIf="filter.checkedValue">
+        <div class="filter-value" (click)="selectValue()">
+          {{ filter.checkedValue.caption }}
+        </div>
+        <div class="div-chip-remove" *ngIf="!filter.disableClose">
+          <mat-icon (click)="clearFilter()" svgIcon="clear_black" inline="true"></mat-icon>
+        </div>
+      </div>
+
+      <button class="filter-value" (click)="selectValue()" *ngIf="!filter.checkedValue">
+        <span>{{ 'COMMON.SELECT' | translate }}</span>
+      </button>
+    </ng-container>
+  </div>
+
+  <ng-container *ngIf="filter.getItems">
+    <mat-radio-group class="filters-group" *ngIf="items.length" [(ngModel)]="filter.checkedValue">
+      <ng-container *ngFor="let item of items | slice: 0:listLength">
+        <mat-radio-button class="value" [value]="item" *ngIf="item">
+          {{ item.translationKey ? (item.translationKey | translate) : item.caption }}
+        </mat-radio-button>
+      </ng-container>
+    </mat-radio-group>
+
+    <ng-container *ngIf="listLength !== items.length; else collapse">
+      <button class="rest-filters" (click)="changeListLength()" *ngIf="items.length > 2">
+        <span>{{ 'COMMON.SHOW_MORE' | translate }} {{ items.length - listLength }}</span>
+        <mat-icon svgIcon="expand_more"></mat-icon>
+      </button>
+    </ng-container>
+
+    <ng-template #collapse>
+      <button class="rest-filters" (click)="changeListLength()">
+        <span>{{ 'COMMON.COLLAPSE_LIST' | translate }}</span>
+      </button>
+    </ng-template>
+  </ng-container>
+</div>

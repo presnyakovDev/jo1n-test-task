@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="language-button-container">
+    <button class="language-button e2e-language-button" (click)="openLanguagesMenu()">
+      <div class="language-button-icon-container">
+        <img
+          width="16"
+          height="16"
+          src="assets/images/flags/{{ translate.currentLang }}.png"
+          alt="{{ translate.currentLang }}"
+        />
+      </div>
+    </button>
+  </div>
+
+  <div class="list-languages" *ngIf="showLanguagesMenu">
+    <button
+      *ngFor="let language of languages"
+      class="language-select-button e2e-language-select-button-{{ language.caption }}"
+      (click)="changeLanguage(language)"
+    >
+      <div class="language-select-button__content-container">
+        <div class="language-select-button__icon-container">
+          <img width="16" [src]="language.iconUrl" [alt]="language.caption" />
+        </div>
+        <span class="language-select-button__text">{{ language.caption }}</span>
+      </div>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<button mat-button [matMenuTriggerFor]="languageMenu" class="language-button">
+  <img width="16" src="assets/images/flags/{{ translate.currentLang }}.png" alt="{{ translate.currentLang }}" />
+  <span class="language-name">{{ translate.currentLang | uppercase }}</span>
+</button>
+
+<mat-menu #languageMenu="matMenu" class="language-menu">
+  <button
+    mat-menu-item
+    *ngFor="let lang of languages"
+    (click)="changeLanguage(lang)"
+    fxLayout="row"
+    fxLayoutAlign="left center"
+  >
+    <img width="16" [src]="lang.iconUrl" [alt]="lang.caption" />
+    <span class="language-name">{{ lang.caption }}</span>
+  </button>
+</mat-menu>

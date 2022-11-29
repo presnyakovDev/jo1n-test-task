@@ -1,0 +1,57 @@
+<div class="nav-link__container" [class.nav-link_opened-menu]="isOpenedMenu" *ngFor="let link of links">
+  <div
+    *ngIf="!link.url && showMenuCategories"
+    class="nav-link__group-container nav-link__group"
+    [style.padding-left]="isOpenedMenu ? '13px' : '0'"
+  >
+    <ng-container *ngIf="isOpenedMenu; else isClosedMenu">
+      <span class="nav-link__text">{{ link.translationKey ? (link.translationKey | translate) : link.title }}</span>
+    </ng-container>
+    <ng-template #isClosedMenu>
+      <div class="nav-link__group-spacer"></div>
+    </ng-template>
+  </div>
+  <ng-container *ngIf="!link?.external; else externalLink">
+    <a
+      [routerLink]="link.url"
+      class="nav-link"
+      [class.condensed]="showMenuCategories"
+      [class.current-nav-link]="currentUrl === link.url"
+      *ngIf="link.url"
+      (click)="!isLaptop && clickLink()"
+    >
+      <div class="nav-link__icon-container">
+        <mat-icon class="nav-link__icon" [svgIcon]="link.icon"></mat-icon>
+      </div>
+      <div class="nav-link__text-container">
+        <span class="nav-link__text">{{ link.translationKey ? (link.translationKey | translate) : link.title }}</span>
+
+        <span
+          class="nav-link__badge"
+          *ngIf="link.badge"
+          [style.color]="link.badge.color"
+          [style.background-color]="link.badge.backgroundColor"
+          >{{ link.badge.title }}</span
+        >
+      </div>
+    </a>
+  </ng-container>
+  <ng-template #externalLink>
+    <a class="nav-link" [class.condensed]="showMenuCategories" *ngIf="link.url" [href]="link.url" target="_blank">
+      <div class="nav-link__icon-container">
+        <mat-icon class="nav-link__icon" [svgIcon]="link.icon"></mat-icon>
+      </div>
+      <div class="nav-link__text-container">
+        <span class="nav-link__text">{{ link.translationKey ? (link.translationKey | translate) : link.title }}</span>
+
+        <span
+          class="nav-link__badge"
+          *ngIf="link.badge"
+          [style.color]="link.badge.color"
+          [style.background-color]="link.badge.backgroundColor"
+          >{{ link.badge.title }}</span
+        >
+      </div>
+    </a>
+  </ng-template>
+</div>

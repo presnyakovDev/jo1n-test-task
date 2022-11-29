@@ -1,0 +1,32 @@
+@import '../../../../core/scss/fuse';
+
+.button-wrapper {
+  background-color: var(--accent-color);
+  position: relative;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: none !important;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 20px;
+  color: var(--on-accent-color);
+  margin: 2px 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include media-breakpoint-down('sm') {
+    span.text {
+      display: none;
+    }
+  }
+}
+
+.mat-icon {
+  color: var(--accent-color);
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}

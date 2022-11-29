@@ -1,0 +1,93 @@
+<div
+  class="container"
+  [class.container__opened]="isFixedMenu || isOpenMenu"
+  (mouseenter)="changeLogoStyle($event)"
+  (mouseleave)="changeLogoStyle($event)"
+>
+  <div class="header-menu-container">
+    <div
+      class="header-menu-logo-container"
+      [style.paddingLeft]="isFixedMenu || isOpenMenu ? logo.paddingLeftOnHover : logo.paddingLeft"
+    >
+      <img
+        class="header-menu-logo"
+        [src]="urlLogo"
+        [width]="widthLogo"
+        [height]="heightLogo"
+        alt="Logo"
+        [routerLink]="['']"
+      />
+    </div>
+    <div class="header-menu-fixed-menu-button-container">
+      <button class="header-menu-fixed-menu-button" (click)="!isLaptop ? closeMenu() : fixedMenu()">
+        <mat-icon
+          class="header-menu-fixed-menu-icon"
+          [style.transform]="!isFixedMenu && isLaptop ? 'rotate(45deg)' : 'rotate(0deg)'"
+          [svgIcon]="isLaptop ? 'push_pin' : 'arrow_back'"
+        >
+        </mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="side-nav-menu__buttons-container">
+    <button
+      class="button {{ button.class }} {{ button.e2eClass }}"
+      *ngFor="let button of buttons"
+      (click)="button.callback()"
+    >
+      <div class="button__content-container">
+        <ng-template [ngIf]="button.icon">
+          <div class="button-icon-container {{ button.class }}-icon-container">
+            <mat-icon class="button-icon {{ button.class }}-icon" [svgIcon]="button.icon"></mat-icon>
+          </div>
+        </ng-template>
+        <div class="button-text-container">
+          <span class="button-text {{ button.class }}-text">{{
+            button.translationKey ? (button.translationKey | translate) : button.title
+          }}</span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div class="nav-links__container">
+    <mc2022-side-nav-accordion
+      (closeMenu)="closeMenu()"
+      [isOpenedMenu]="isFixedMenu || isOpenMenu"
+      [isLaptop]="isLaptop"
+    >
+    </mc2022-side-nav-accordion>
+    <!--    <mc-2021-side-nav-links-->
+    <!--      [links]="links"-->
+    <!--      [isOpenedMenu]="isFixedMenu || isOpenMenu"-->
+    <!--      [isLaptop]="isLaptop"-->
+    <!--      [showMenuCategories]="showMenuCategories"-->
+    <!--      (onClickLink)="closeMenu()"-->
+    <!--    ></mc-2021-side-nav-links>-->
+  </div>
+
+  <div class="bonus-widget-container" *ngIf="bonus">
+    <div class="bonus-widget-icon-container">
+      <mat-icon class="bonus-widget-icon" svgIcon="paid"></mat-icon>
+    </div>
+    <div class="bonus-widget">
+      <div class="bonus-widget_flex">
+        <div class="bonus-widget-text-container">
+          <div class="bonus-widget-text-date">{{ bonus?.title }}</div>
+          <div class="bonus-widget-text">Начислено</div>
+        </div>
+        <div class="bonus-widget-button-container">
+          <button class="bonus-widget-button" (click)="closeAmountRemuneration()">
+            <mat-icon class="bonus-widget-button-icon" svgIcon="close"></mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="bonus-widget-amount-remuneration-container">
+        <span class="bonus-widget-amount-remuneration" *ngIf="bonus?.totalFormatted"
+          >{{ bonus?.totalFormatted }} ₽</span
+        >
+        <span class="bonus-widget-amount-remuneration" *ngIf="!bonus?.totalFormatted">Загрузка...</span>
+      </div>
+    </div>
+  </div>
+</div>

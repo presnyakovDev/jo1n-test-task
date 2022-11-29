@@ -1,0 +1,22 @@
+@import '../../../core/scss/fuse';
+
+:host {
+  .language-button {
+    min-width: 64px;
+    height: 64px;
+    border-left: 2px solid lightgrey;
+    border-radius: 0;
+
+    @include media-breakpoint-down('xs') {
+      height: 56px;
+    }
+
+    img {
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.language-name {
+  margin-left: 8px;
+}

@@ -1,0 +1,115 @@
+$filter-background-color: #f8f8f8;
+.filter-item {
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 12px;
+
+  .value {
+    margin-left: 25px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  .filter-name {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .clear-filter {
+    color: #1976d2;
+    margin-left: 16px;
+    cursor: pointer;
+  }
+
+  .filters-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-value {
+    margin: 0 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 24px;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: $filter-background-color;
+    border-radius: 12px;
+    padding: 0 16px;
+
+    cursor: pointer;
+  }
+
+  .div-chip-remove {
+    width: 10px;
+    cursor: pointer;
+  }
+
+  .rest-filters {
+    width: 60%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 24px;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: $filter-background-color;
+    border-radius: 12px;
+    padding: 0 16px;
+
+    cursor: pointer;
+
+    .mat-icon {
+      color: #000000;
+    }
+  }
+}
+
+$radio-button-size: 16px;
+$radio-outer-circle-size: calc(#{$radio-button-size} - 2px);
+$radio-outer-circle-position: calc((#{$radio-button-size} - #{$radio-outer-circle-size}) / 2);
+$radio-button-color: rgba(0, 0, 0, 0.6);
+
+.filters-group {
+  .mat-radio-container {
+    width: $radio-button-size;
+    height: $radio-button-size;
+
+    .mat-radio-outer-circle {
+      position: relative;
+      width: $radio-button-size;
+      height: $radio-button-size;
+      border-radius: 4px;
+      background-color: $radio-button-color;
+      border: none;
+
+      &:after {
+        content: '';
+        width: $radio-outer-circle-size;
+        height: $radio-outer-circle-size;
+
+        position: absolute;
+        top: $radio-outer-circle-position;
+        left: $radio-outer-circle-position;
+
+        background-color: #ffffff;
+        border-radius: 50%;
+      }
+    }
+
+    .mat-radio-inner-circle {
+      width: $radio-button-size;
+      height: $radio-button-size;
+
+      background-color: $radio-button-color;
+    }
+  }
+}

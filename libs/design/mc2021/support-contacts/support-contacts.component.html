@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="contacts">
+    <div class="manager-info-container" *ngIf="managerInfo">
+      <h3 class="manager-info-title">{{ 'TOOLBAR.YOUR_MANAGER' | translate }}</h3>
+      <div class="manager-info">
+        <p class="manager-info-phone">
+          {{ managerInfo.managerPhone ? managerInfo.managerPhone : ('COMMON.LOADING_' | translate) }}
+        </p>
+        <p class="manager-info-fullname">{{ managerInfo.managerFullName }}</p>
+      </div>
+    </div>
+    <div class="hot-line-info-container">
+      <h3 class="hot-line-info-title">{{ 'TOOLBAR.HOTLINE' | translate }}</h3>
+      <div class="hot-line-info">
+        <p class="hot-line-info-phone">{{ hotLineInfo.hotLinePhone }}</p>
+        <p class="hot-line-info-email">{{ hotLineInfo.hotLineEmail }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="point-select-dialog__container">
+  <div class="point-select-dialog__title-container">
+    <h1 class="point-select-dialog__title">{{ 'SELECTORS.POINT.DIALOG_TITLE' | translate }}</h1>
+  </div>
+  <div class="point-select-dialog__point-select-container" *ngIf="points?.length">
+    <mc-2021-point-select-control
+      [points]="points"
+      (onChangeStateSelect)="onChangeStateSelect()"
+    ></mc-2021-point-select-control>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<br />
+<div class="bonus">
+  <div class="bonus-title">
+    <span class="title"> {{ item.translationKey ? (item.translationKey | translate) : item.title }}: Начислено </span>
+    <button mat-icon-button (click)="closeBtn()">
+      <mat-icon class="grey" svgIcon="close_white"></mat-icon>
+    </button>
+  </div>
+  <div class="bonus-body">
+    <table *ngIf="false">
+      <tr>
+        <td>Продукты банков:</td>
+        <td class="r">{{ item.mukoFormatted }} ₽</td>
+      </tr>
+      <tr>
+        <td>Доп. сервисы:</td>
+        <td class="r">{{ item.extFormatted }} ₽</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="r total">{{ item.totalFormatted }} ₽</td>
+      </tr>
+    </table>
+
+    <p class="conditions" *ngIf="false">* условия по % комиссии за объем:</p>
+    <table class="conditions">
+      <tr *ngIf="false">
+        <td>Продажи</td>
+        <td class="r">105 302 ₽</td>
+        <td class="r">1.0%</td>
+      </tr>
+      <tr *ngIf="false">
+        <td>След. цель</td>
+        <td class="r">250 000 ₽</td>
+        <td class="r">1.5%</td>
+      </tr>
+      <tr class="left" *ngIf="false">
+        <td colspan="3">До цели осталось продаж</td>
+      </tr>
+      <tr class="left-sum">
+        <td colspan="3" *ngIf="item.totalFormatted !== null">{{ item.totalFormatted }} ₽</td>
+        <td colspan="3" *ngIf="item.totalFormatted === null">Загрузка ...</td>
+      </tr>
+    </table>
+  </div>
+</div>

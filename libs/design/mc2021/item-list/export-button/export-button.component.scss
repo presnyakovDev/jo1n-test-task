@@ -1,0 +1,40 @@
+@import '../../../../core/scss/fuse';
+
+$icon-size: 16px;
+
+.button-wrapper {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0);
+  position: relative;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: none !important;
+  width: 40px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 50%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  margin-top: 0px;
+  margin-left: 12px;
+
+  @include media-breakpoint-down('sm') {
+    max-height: 48px;
+    margin-top: 6px;
+    margin-left: 0px;
+    margin-right: 12px;
+    display: none;
+  }
+}
+.mat-icon {
+  display: flex;
+  color: rgba(0, 0, 0);
+  height: $icon-size;
+  width: $icon-size;
+  min-height: $icon-size;
+  min-width: $icon-size;
+}

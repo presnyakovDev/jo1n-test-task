@@ -1,0 +1,28 @@
+.mc-list-settings-dialog {
+  .settings-container {
+    overflow: hidden;
+    max-width: 400px !important;
+
+    .check-list {
+      background-color: #fff;
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .checkbox {
+        width: 50%;
+      }
+    }
+
+    .actions {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .mat-dialog-container {
+    padding: 0;
+  }
+}

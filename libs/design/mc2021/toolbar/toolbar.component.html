@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="sales-point-container">
+    <button class="hamburger-menu-button" (click)="openMenu()" [class.hamburger-menu-button__opened-menu]="isOpenMenu">
+      <span></span>
+    </button>
+    <mc-2021-point-select
+      [companyCaption]="companyCaption"
+      [pointCaption]="pointCaption"
+      *ngIf="isLaptop && shopPointCaption"
+    ></mc-2021-point-select>
+    <div class="app-title" *ngIf="!isLaptop">
+      <div>{{ appTitle }}</div>
+      <div class="small" *ngIf="appSubTitle">{{ appSubTitle }}</div>
+    </div>
+  </div>
+  <div class="user-menu-container">
+    <mc-2021-support-contacts
+      *ngIf="mode !== 'MOBILE_ATTACHES' && isLaptop"
+      [managerInfo]="managerInfo"
+      [hotLineInfo]="hotLineInfo"
+    ></mc-2021-support-contacts>
+    <mc-2021-language-menu *ngIf="visibleSelectLang"></mc-2021-language-menu>
+    <mc-2021-user-menu
+      [userName]="userName"
+      [isLaptop]="isLaptop"
+      [userLogin]="userLogin"
+      *ngIf="mode !== 'MOBILE_ATTACHES' && visibleUser"
+    ></mc-2021-user-menu>
+  </div>
+</div>

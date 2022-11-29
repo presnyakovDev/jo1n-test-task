@@ -1,0 +1,29 @@
+mc-process-spinner {
+  .processing {
+    padding: 24px;
+    text-align: center;
+
+    mat-icon {
+      margin: 0 auto;
+      padding-right: 72px;
+      font-size: 72px;
+      color: #3c4252;
+      font-weight: bold;
+    }
+  }
+
+  .timer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border: 10px solid #3c4153;
+    border-radius: 50%;
+    line-height: 80px;
+    font-size: 18px;
+  }
+
+  mat-spinner {
+    margin: 0 auto;
+  }
+}

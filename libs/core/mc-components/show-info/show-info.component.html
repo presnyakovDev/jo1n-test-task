@@ -1,0 +1,17 @@
+<div class="dialog-content-wrapper" class="e2e-show-info-dialog">
+  <mat-toolbar matDialogTitle class="m-0" [class.mat-accent]="accent" *ngIf="title">
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-between start">
+      <span class="title dialog-title wrap-normal e2e-show-info-dialog-title">{{ title }}</span>
+    </div>
+  </mat-toolbar>
+
+  <div mat-dialog-content class="p-24 m-0" fusePerfectScrollbar>
+    <div [innerHTML]="htmlContent"></div>
+  </div>
+
+  <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="end center">
+    <button mat-raised-button (click)="exit()" class="exit-button mat-accent e2e-show-info-dialog-close">
+      {{ 'COMMON.CLOSE' | translate }}
+    </button>
+  </div>
+</div>

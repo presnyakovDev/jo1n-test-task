@@ -1,0 +1,129 @@
+<div id="itemList" class="page-layout carded left-sidenav" fusePerfectScrollbar>
+  <div class="top-bg md-accent-bg"></div>
+
+  <mat-sidenav-container>
+    <mat-sidenav
+      class="sidenav mat-sidenav-opened"
+      align="start"
+      opened="true"
+      mode="side"
+      fuseMdSidenavHelper="carded-left-sidenav"
+      md-is-locked-open="gt-md"
+    >
+      <mc-item-list-sidenav
+        [specs]="specs"
+        (onAddButtonClick)="addItem()"
+        (onRemoveFilter)="removeFilter($event)"
+        (onSetFilter)="setFilter($event)"
+        [itemsTitle]="specs.caption"
+        [itemsDescription]="specs.description"
+      >
+      </mc-item-list-sidenav>
+    </mat-sidenav>
+
+    <div class="center">
+      <mc-item-list-header
+        [specs]="specs"
+        [searchTextFromPage]="page.searchText"
+        (onAddButtonClick)="addItem()"
+        (onRemoveFilter)="removeFilter($event)"
+        (onSetFilter)="setFilter($event)"
+        (onSearchChange)="setSearchString($event)"
+        (onSettingsClick)="settingsClick()"
+        (onExportToXlsClick)="onExportToXlsClick()"
+      >
+      </mc-item-list-header>
+
+      <div class="content-card md-white-bg">
+        <div class="content" fxFlexAlign="row">
+          <div class="table-host" fusePerfectScrollbar #scrollContainer>
+            <mat-table
+              #table
+              [dataSource]="dataSource"
+              [@animateStagger]="{ value: '50' }"
+              matSort
+              [class.navbar-folded]="navbar?.isFoldedActive"
+              [class.navbar-not-folded]="!navbar?.isFoldedActive"
+              cdkDropList
+              cdkDropListOrientation="horizontal"
+              (cdkDropListDropped)="columnDropped($event)"
+            >
+              <ng-container [cdkColumnDef]="column.id" *ngFor="let column of specs?.columns; let i = index">
+                <mat-header-cell
+                  *cdkHeaderCellDef
+                  [class.hide-if-mobile]="!column.showIfMobile"
+                  [style]="getSafeStyle(column.columnStyle)"
+                  [style.flex-basis]="column.width + 'px'"
+                  cdkDrag
+                  (cdkDragStarted)="columnDragStarted()"
+                >
+                  <span *ngIf="(resizing$ | async) || (reordering$ | async)" align="center" class="pl-12 pr-12">{{
+                    column.translationKey ? (column.translationKey | translate) : column.caption
+                  }}</span>
+                  <span
+                    mat-sort-header
+                    [disabled]="!column.sort"
+                    class="pl-12"
+                    *ngIf="!(resizing$ | async) && !(reordering$ | async)"
+                    >{{ column.translationKey ? (column.translationKey | translate) : column.caption }}</span
+                  >
+
+                  <div class="resizer">
+                    <div class="resizer-right" (mousedown)="onResizeColumn($event, column)"></div>
+                  </div>
+                </mat-header-cell>
+
+                <mat-cell
+                  *cdkCellDef="let item"
+                  [class.hide-if-mobile]="column.showIfMobile === false"
+                  [style]="getSafeStyle(column.columnStyle)"
+                  [style.flex-basis]="column.width + 'px'"
+                >
+                  <p class="text-truncate" *ngIf="!column.component; else columnComponent">
+                    {{ column.content(item) }}
+                  </p>
+
+                  <ng-template #columnComponent>
+                    <mc-item-list-custom-cell
+                      [factory]="column.component(item)"
+                      [item]="item"
+                    ></mc-item-list-custom-cell>
+                  </ng-template>
+                </mat-cell>
+              </ng-container>
+
+              <mat-header-row *cdkHeaderRowDef="displayedColumns" [style.width]="rowWidth + 'px'"></mat-header-row>
+              <mat-row
+                *cdkRowDef="let item; columns: displayedColumns"
+                [class.mc-red-row]="specs.rowStyle(item) === 'red'"
+                [class.mc-green-row]="specs.rowStyle(item) === 'green'"
+                [class.mc-blue-row]="specs.rowStyle(item) === 'blue'"
+                [style.width]="rowWidth + 'px'"
+                [ngClass]="specs.rowStyle(item)"
+                (click)="editItem(item)"
+                matRipple
+                [@animate]="{ value: '*', params: { y: '100%' } }"
+              >
+              </mat-row>
+            </mat-table>
+
+            <div *ngIf="loading$ | async" class="items-loading">Загрузка...</div>
+
+            <div *ngIf="error" class="loading-error">
+              {{ error }}
+            </div>
+
+            <mat-paginator
+              #paginator
+              [length]="totalCount"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              [pageIndex]="pageIndex"
+            >
+            </mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,59 @@
+.mat-icon-button {
+  .mat-button-ripple {
+    border-radius: 50%;
+  }
+}
+
+.cdk-overlay-container.introjs-fixParent {
+  z-index: 1000 !important;
+}
+
+.introjs-helperLayer {
+  opacity: 50%;
+}
+
+mat-sidenav-container {
+  mat-sidenav {
+    &[md-is-locked-open].md-stop-transition {
+      transition: none !important;
+      transform: translate3d(0, 0, 0) !important;
+      opacity: 0;
+
+      ~ .mat-sidenav-content,
+      ~ .mat-drawer-content {
+        transition: none !important;
+      }
+    }
+
+    &.mat-sidenav-opened {
+      &.mat-drawer-side {
+        ~ .mat-sidenav-content,
+        ~ .mat-drawer-content {
+          transition: none !important;
+          transform: translate3d(0, 0, 0) !important;
+        }
+      }
+    }
+
+    &.mat-drawer-end {
+    }
+  }
+
+  .mat-drawer-content {
+  }
+}
+
+@media screen and (max-width: 573px) {
+  mat-dialog-container {
+    .mat-dialog-actions {
+      row-gap: 16px;
+      .mat-raised-button {
+        width: 100%;
+      }
+    }
+    .mat-dialog-actions .mat-button-base + .mat-button-base,
+    .mat-dialog-actions .mat-mdc-button-base + .mat-mdc-button-base {
+      margin: 0 !important;
+    }
+  }
+}

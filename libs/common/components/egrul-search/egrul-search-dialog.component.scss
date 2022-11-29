@@ -1,0 +1,25 @@
+.egrul-form-dialog {
+  .mat-radio-label {
+    white-space: normal !important;
+  }
+
+  .mat-dialog-container {
+    padding: 0;
+    width: 600px;
+    overflow: hidden;
+
+    .mat-toolbar {
+      min-height: initial;
+    }
+
+    .toolbar-bottom {
+      height: auto;
+    }
+  }
+
+  .dialog-content-wrapper {
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+  }
+}

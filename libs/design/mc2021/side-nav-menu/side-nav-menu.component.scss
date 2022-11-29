@@ -1,0 +1,338 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  transition: 0.4s;
+  overflow: hidden;
+  z-index: 10;
+  max-width: 50px;
+  position: relative;
+
+  &:hover {
+    @extend %side-nav-open;
+  }
+
+  &__opened {
+    @extend %side-nav-open;
+  }
+}
+.header-menu {
+  &-container {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+  }
+
+  &-logo {
+    transition: 0.4s;
+    cursor: pointer;
+    &-container {
+      width: 100%;
+      padding-top: 11px;
+    }
+  }
+
+  &-fixed-menu {
+    &-button-container {
+      display: none;
+      transition: 0.3s;
+    }
+  }
+}
+.side-nav-menu__buttons-container {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 5px;
+  transition: 0.4s;
+}
+
+.side-nav-menu__buttons-container {
+  @media (max-width: 1024px) {
+    padding: 5px 5px;
+  }
+}
+
+.button {
+  white-space: nowrap;
+  cursor: pointer;
+  max-height: 40px;
+  height: 40px;
+  border-radius: 24px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  padding: 11px;
+  transition: 0.4s;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__content-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &-text {
+    overflow: hidden;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 15px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-icon {
+    &-container {
+      margin-right: 18px;
+      display: flex;
+      align-items: center;
+    }
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+    min-height: 18px;
+    min-width: 18px;
+  }
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
+  &-text,
+  &-icon {
+    color: var(--on-primary-color);
+  }
+}
+
+.button-accent {
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
+  &-text,
+  &-icon {
+    color: var(--on-accent-color);
+  }
+}
+
+.button-outlined {
+  border: 1px solid var(--button-application-border-color, #373737);
+
+  &-icon,
+  &-text {
+    color: #373737;
+  }
+}
+
+.nav-links__container {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding-right: 1px;
+  height: 100%;
+  transition: 0.4s;
+  flex-shrink: 50;
+}
+
+.bonus-widget {
+  display: none;
+  &-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 50px;
+    transition: 0.6s;
+    padding-bottom: 11px;
+  }
+  &-icon {
+    color: var(--on-primary-color) !important;
+    font-size: 20px;
+    height: 20px;
+    min-height: 1px;
+    min-width: 1px;
+    width: 20px;
+
+    &-container {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      background-color: var(--primary-color);
+    }
+  }
+}
+
+%side-nav-open {
+  max-width: 320px;
+  width: 100%;
+  transition: 0.4s;
+  .header-menu {
+    &-container {
+      padding: 4px 19px 0 28px;
+      width: 100%;
+      justify-content: space-between;
+      @media (max-width: 1024px) {
+        flex-basis: 55px;
+        border-bottom: 1px solid #979797;
+        padding: 4px 10px;
+      }
+    }
+
+    &-logo {
+      transition: 0.4s;
+      transition-delay: 0.1s;
+      &-container {
+        justify-content: flex-start;
+      }
+    }
+    &-fixed-menu {
+      &-button {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        &-container {
+          width: 100%;
+          transition: 0.3s;
+          display: flex;
+          justify-content: flex-end;
+        }
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+      &-icon {
+        color: black;
+        font-size: 25px;
+        transition: 0.4s;
+      }
+    }
+  }
+
+  .button-primary,
+  .button-accent,
+  .button-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    transition: 0.4s;
+    padding: 12px;
+
+    &-text {
+      overflow: hidden;
+      font-weight: bold;
+      white-space: nowrap;
+      font-size: 16px;
+      line-height: 15px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    &-icon {
+      font-size: 21px;
+      height: 100%;
+      display: flex;
+      &-container {
+        margin-right: 18px;
+      }
+    }
+  }
+
+  .button-outlined {
+    &-icon-container {
+      display: none;
+    }
+  }
+
+  .nav-links__container {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 9px;
+    @media (max-width: 1024px) {
+      padding-top: 16px;
+    }
+    width: 100%;
+  }
+
+  .bonus-widget {
+    display: block;
+    background-color: var(--primary-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 12px 30px 23px;
+    &-container {
+      padding-bottom: 0;
+    }
+    &-container {
+      display: block;
+      width: 100%;
+    }
+
+    &-icon {
+      &-container {
+        display: none;
+      }
+    }
+
+    &-text {
+      font-size: 13px;
+      line-height: 13px;
+      letter-spacing: 0.454988px;
+      color: var(--on-primary-color) !important;
+      &-date {
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: 0.454988px;
+        margin-right: 15px;
+        color: var(--on-primary-color) !important;
+      }
+      &-container {
+        display: flex;
+      }
+    }
+
+    &-button {
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      &:hover {
+        background-color: #f0f0f0;
+
+        .bonus-widget-button-icon {
+          color: var(--primary-color) !important;
+        }
+      }
+
+      &-icon {
+        color: var(--on-primary-color) !important;
+      }
+    }
+
+    &-amount-remuneration {
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 24px;
+      letter-spacing: 0.15px;
+      color: var(--on-primary-color) !important;
+    }
+
+    &_flex {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

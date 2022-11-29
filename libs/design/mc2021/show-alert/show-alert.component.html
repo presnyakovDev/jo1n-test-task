@@ -1,0 +1,46 @@
+<div class="dialog-content-wrapper e2e-show-alert-dialog">
+  <mat-toolbar matDialogTitle class="mat-warn m-0" *ngIf="!noError">
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-between start">
+      <span class="title dialog-title wrap-normal">{{ title }}</span>
+    </div>
+  </mat-toolbar>
+
+  <mat-toolbar matDialogTitle class="m-0" *ngIf="noError">
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-between start">
+      <span class="title dialog-title wrap-normal">{{ title }}</span>
+    </div>
+  </mat-toolbar>
+
+  <div mat-dialog-content class="p-24 m-0" fusePerfectScrollbar>
+    {{ content }}
+
+    {{ errorTitle }}
+    <mat-list *ngIf="errors">
+      <mat-list-item class="error-item" *ngFor="let error of errors">
+        {{ error }}
+      </mat-list-item>
+      <mat-list-item class="error-item" *ngFor="let errorsTranslationKey of errorsTranslationKeys">
+        {{ errorsTranslationKey | translate }}
+      </mat-list-item>
+    </mat-list>
+
+    <p class="hint-text">
+      {{ fadedContent }}
+    </p>
+
+    <div [innerHtml]="html" *ngIf="html"></div>
+  </div>
+
+  <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="end center" *ngIf="!confirmAction">
+    <button mat-raised-button color="primary" (click)="exit()" class="exit-button">
+      {{ 'COMMON.CLOSE' | translate }}
+    </button>
+  </div>
+
+  <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="end center" *ngIf="confirmAction">
+    <button mat-raised-button color="primary" (click)="yes()" class="exit-button">
+      {{ yesButtonTitle }}
+    </button>
+    <button mat-raised-button color="primary" (click)="exit()" class="exit-button">Нет</button>
+  </div>
+</div>

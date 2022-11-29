@@ -1,0 +1,101 @@
+<div fxLayout="column" style="width: 100%">
+  <mat-toolbar class="p-0 mat-elevation-z1" [class.is-mobile]="isMobile">
+    <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+        <button mat-button class="toggle-button-navbar mat-icon-button" fuseNavbarVertical="openBar" fxHide.gt-md>
+          <mat-icon class="grey" svgIcon="menu_black"></mat-icon>
+        </button>
+
+        <div class="toolbar-separator" fxHide.gt-md></div>
+
+        <div fxLayout="row" fxLayoutAlign="start center" *ngIf="horizontalNav$ | async">
+          <div class="logo ml-16">
+            <img class="logo-icon" src="assets/images/logos/mc.svg" />
+          </div>
+        </div>
+
+        <div
+          fxLayout="column"
+          class="app-title ml-16"
+          fxLayoutAlign="center start"
+          *ngIf="!(horizontalNav$ | async) && !shopPointCaption"
+          fxHide.gt-md
+        >
+          <span>{{ appTitle }}</span>
+          <span class="small" *ngIf="appSubTitle"><br />{{ appSubTitle }}</span>
+        </div>
+
+        <div fxLayout="row" fxHide.lt-md class="app-title ml-16" fxLayoutAlign="start center" *ngIf="shopPointCaption">
+          <span (click)="selectPoint()" style="cursor: pointer" *ngIf="companyCaption">
+            {{ companyCaption }}<br />
+            <span class="point-caption">{{ pointCaption }}</span>
+          </span>
+          <span (click)="selectPoint()" style="cursor: pointer" *ngIf="!companyCaption">
+            {{ pointCaption }}
+          </span>
+          <button mat-raised-button *ngIf="pointCaption" (click)="selectPoint()" class="import-button ml-16 pl-4">
+            <mat-icon svgIcon="chevron_left_black"></mat-icon>
+            {{ 'TOOLBAR.CHANGE_POINT_OF_SALE' | translate }}
+          </button>
+        </div>
+        <div
+          fxLayout="column"
+          fxHide.gt-sm
+          class="app-title ml-16"
+          fxLayoutAlign="start start"
+          *ngIf="shopPointCaption"
+          (click)="appTitleClick()"
+          style="cursor: pointer"
+        >
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <span>{{ appTitle }} </span>
+            <mat-icon svgIcon="keyboard_arrow_down_black" *ngIf="appTitleClick"></mat-icon>
+          </div>
+          <span class="small" *ngIf="appSubTitle"><br />{{ appSubTitle }}</span>
+        </div>
+
+        <div class="px-8 px-md-16" fxHide fxShow.gt-md></div>
+      </div>
+
+      <div class="mr-32" fxFlex="137px" fxLayout="column" fxLayoutAlign="start start" fxHide.lt-sm *ngIf="managerPhone">
+        <p class="contact-title">{{ 'TOOLBAR.YOUR_MANAGER' | translate }}</p>
+        <p class="contact-phone">{{ managerPhone }}</p>
+        <p class="contact-fullname">{{ managerFullname }}</p>
+      </div>
+
+      <div class="mr-16" fxFlex="120px" fxLayout="column" fxLayoutAlign="start start" fxHide.lt-sm>
+        <p class="contact-title">{{ 'TOOLBAR.HOTLINE' | translate }}</p>
+        <p class="contact-phone">{{ hotLinePhone }}</p>
+        <a href="mailto:{{ hotLineEmail }}" class="contact-email">{{ hotLineEmail }}</a>
+      </div>
+
+      <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+        <mat-spinner *ngIf="showSpinner$ | async" class="loading-spinner mx-8"></mat-spinner>
+
+        <fuse-user-menu></fuse-user-menu>
+        <fuse-language-menu *ngIf="translate.getLanguages().length > 1"></fuse-language-menu>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <ng-container *ngFor="let item of notifications">
+    <div
+      class="notification-panel {{ item.type }}"
+      [class.ellipsis]="item.notificationBodyInOneString"
+      fxLayout="row"
+      fxLayoutAlign="space-between start"
+      *ngIf="item.show"
+    >
+      <div class="text">
+        <img src="{{ item.imageUrl }}" alt="" *ngIf="item.imageUrl" />
+        <h3 *ngIf="item.title">{{ item.title }}</h3>
+        {{ item.beforeLink }}<a *ngIf="item.link" (click)="notificationLinkClick(item)">{{ item.link }}</a
+        >{{ item.afterLink }}
+      </div>
+      <button mat-icon-button *ngIf="item.canClose" (click)="notificationCloseClick(item)" class="mat-default">
+        <mat-icon class="grey" svgIcon="close_black" *ngIf="item.type === 'danger'"></mat-icon>
+        <mat-icon class="grey" svgIcon="close_white" *ngIf="item.type === 'info'"></mat-icon>
+      </button>
+    </div>
+  </ng-container>
+</div>

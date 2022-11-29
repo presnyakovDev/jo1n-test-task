@@ -1,0 +1,47 @@
+.container {
+  height: 100%;
+  margin-right: 6px;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  height: 48px;
+}
+
+.manager-info,
+.hot-line-info {
+  &-title {
+    font-weight: 700;
+    font-size: 10px;
+    white-space: nowrap;
+    color: var(--contacts-title-color);
+    margin: 0;
+  }
+
+  &-phone {
+    margin: 0;
+    font-size: 12px;
+    line-height: 10px;
+    font-weight: 700;
+    margin: 1px;
+  }
+}
+
+.manager-info {
+  &-container {
+    margin-right: 12px;
+  }
+  &-fullname {
+    margin: 0;
+    font-size: 10px;
+  }
+}
+
+.hot-line-info {
+  &-email {
+    margin: 0;
+    font-size: 10px;
+  }
+}

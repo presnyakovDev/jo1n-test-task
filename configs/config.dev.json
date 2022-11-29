@@ -1,0 +1,11 @@
+{
+    "auth-disabled"     : true,
+
+    "codes-deadline-days" : 5,
+    "agency-fee-support-phone": "8 (800) 550 61 09",
+
+    "api-operators-self-url" : "api/operators/1",
+
+    "auth-client-id"    : "front",
+    "auth-scopes"       : "user_info"
+}

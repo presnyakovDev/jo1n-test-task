@@ -1,0 +1,47 @@
+<div class="page-layout carded left-sidenav container" fusePerfectScrollbar>
+  <div class="top-bg"></div>
+
+  <mat-sidenav-container>
+    <div class="main-column">
+      <mc-2021-item-list-tabs-line [specs]="specs"></mc-2021-item-list-tabs-line>
+
+      <div class="item-list-header" fxLayout="row" fxLayoutAlign="start center">
+        <mc-2021-item-list-add-button
+          [specs]="specs"
+          fxHide.lt-md
+          *ngIf="specs?.addItemEnabled"
+        ></mc-2021-item-list-add-button>
+
+        <div
+          style="height: 100%"
+          fxFlex
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayout.xs="column"
+          fxLayoutAlign.xs="space-evenly stretch"
+        >
+          <mc-2021-item-list-search-text
+            [specs]="specs"
+            *ngIf="specs?.freeTextQueryEnabled && (pageParamsUpdated$ | async)"
+          ></mc-2021-item-list-search-text>
+
+          <mc-2021-item-list-filters-line [specs]="specs" fxFlex></mc-2021-item-list-filters-line>
+
+          <mc-2021-item-list-export-button [specs]="specs" class="hide-lt-md"></mc-2021-item-list-export-button>
+
+          <mc-2021-item-list-settings-button [specs]="specs" fxHide.xs></mc-2021-item-list-settings-button>
+        </div>
+
+        <mc-2021-item-list-add-button
+          [specs]="specs"
+          fxFlex
+          fxHide.gt-sm
+          *ngIf="specs?.addItemEnabled"
+        ></mc-2021-item-list-add-button>
+      </div>
+
+      <mc-2021-item-list-table #table [specs]="specs" (clickRow)="onEditItem($event)" (pageEvent)="onPageEvent($event)">
+      </mc-2021-item-list-table>
+    </div>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,51 @@
+@import '../../scss/fuse.scss';
+
+.company-select {
+  .search {
+    @include mat-elevation(7);
+    padding: 16px;
+    margin-bottom: 8px;
+    width: 100%;
+
+    .mat-icon {
+      margin-right: 12px;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .mat-dialog-container {
+    padding: 0;
+    width: 800px;
+    overflow: hidden;
+
+    .mat-toolbar {
+      min-height: initial;
+      padding-right: 8px !important;
+    }
+
+    .mat-toolbar-row {
+      height: auto !important;
+      padding: 8px 0 !important;
+    }
+
+    .toolbar-bottom {
+      height: auto;
+    }
+  }
+
+  .mat-dialog-content {
+    padding: 24px;
+    @include media-breakpoint-down('sm') {
+      padding: 12px;
+    }
+  }
+
+  .dialog-content-wrapper {
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,80 @@
+$border-color: rgba(220, 220, 220, 1);
+$help-color: #979797;
+$help-background: rgba(241, 241, 241, 0.87);
+$filters-height: 48px;
+
+.filter-tab-value.selected {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  border-bottom-width: 2px !important;
+  border-bottom-style: solid;
+}
+
+.filter-tabs {
+  width: 100%;
+  height: $filters-height;
+  color: var (--text-color);
+  border-bottom: 1px solid $border-color;
+  padding-top: 8px;
+}
+
+.filter-tab-value:hover {
+  border-bottom-width: 1.5px;
+  border-bottom-style: solid;
+}
+
+.filter-tab-value {
+  margin-left: 24px;
+  padding: 10px 12px 0 24px;
+  height: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+
+  .badge {
+    background-color: var(--warn-color);
+    color: var(--on-warn-color) !important;
+    border-radius: 9px;
+    height: 18px;
+    padding: 0 4px;
+    margin-left: 4px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1700px) {
+  .filter-tab-value {
+    margin-left: 4px;
+    padding: 4px 6px 0 12px;
+  }
+}
+
+.help {
+  width: 10px;
+  height: 10px;
+  margin-left: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: $help-color;
+  background-color: $help-background;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 549px) {
+  .filter-tab-value {
+    font-size: 10px;
+    line-height: 10px;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 550px) and (max-width: 700px) {
+  .filter-tab-value {
+    font-size: 11px;
+    line-height: 15px;
+  }
+}

@@ -1,0 +1,20 @@
+<h1 matDialogTitle class="e2e-fuse-confirm-title">{{ title }}</h1>
+<div mat-dialog-content style="font-size: 200%">{{ confirmBigText }}</div>
+<div mat-dialog-content [class.warn]="showWarnMessage">{{ confirmMessage }}</div>
+<div mat-dialog-content>
+  <p *ngFor="let message of messages" [class.warn]="showWarnMessage">{{ message }}</p>
+</div>
+<div
+  class="actions"
+  fxLayout="row"
+  fxLayout.lt-sm="column"
+  fxLayoutAlign="space-between center"
+  fxLayoutAlign.lt-sm="start strech"
+  fxLayoutGap="16px"
+  fxLayoutGap.lt-sm="10px"
+>
+  <button mat-button (click)="dialogRef.close(false)">{{ cancelButtonText }}</button>
+  <button mat-raised-button class="e2e-fuse-confirm-button" (click)="dialogRef.close(true)" color="primary">
+    {{ confirmButtonText }}
+  </button>
+</div>

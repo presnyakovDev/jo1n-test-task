@@ -1,0 +1,9 @@
+<ng-container *ngFor="let item of menuItems$ | async">
+  <mc-2022-side-nav-expansion-panel
+    [title]="item.translationKey || item.title"
+    [children]="item.children"
+    [isOpenedMenu]="isOpenedMenu"
+    [isLaptop]="isLaptop"
+    [(expandedState)]="userExpandedState"
+  ></mc-2022-side-nav-expansion-panel>
+</ng-container>

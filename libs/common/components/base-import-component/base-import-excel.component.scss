@@ -1,0 +1,50 @@
+:host {
+  width: 100%;
+}
+
+.imports-excel {
+  &__title {
+    margin: 0 0 16px 0;
+  }
+
+  &__description-container {
+    margin-bottom: 16px;
+  }
+  &__upload-button-text {
+    margin-left: 5px;
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__file-input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__file-name-container {
+    margin-right: 16px;
+  }
+
+  &__list-columns-title {
+    margin: 0;
+  }
+
+  &__text-container {
+    margin-bottom: 16px;
+  }
+
+  &__progress-send-data {
+    &-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-text {
+      text-align: center;
+    }
+  }
+}

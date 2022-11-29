@@ -1,0 +1,55 @@
+<div class="container">
+  <button class="button" (click)="openMenu()" #toggleButton>
+    <div class="button__content-container">
+      <div class="logo-container">
+        <img class="avatar" src="assets/images/avatars/profile.jpg" class="logo" />
+      </div>
+      <div class="user-name__text-container" *ngIf="mode === 'DESKTOP'">
+        <p class="user-name__text">{{ userName }}</p>
+        <span class="user-name__text-small">{{ userLogin }}</span>
+      </div>
+      <mat-icon
+        class="arrow-icon"
+        *ngIf="mode === 'DESKTOP'"
+        [style.transform]="isOpenedMenu && isLaptop ? 'rotate(180deg)' : 'rotate(0deg)'"
+        svgIcon="expand_more"
+      >
+      </mat-icon>
+    </div>
+  </button>
+  <div class="menu" *ngIf="isOpenedMenu">
+    <div class="links-menu">
+      <!-- <a class="link-menu" [routerLink]="['/operatorForm']" *ngIf="isMcOper">
+        <mat-icon class="link-menu-icon" svgIcon="person"></mat-icon>
+        {{ 'USER_MENU.FILL_QUESTIONNAIRE' | translate }}
+      </a> -->
+
+      <button class="link-menu" (click)="openDialogChangePassword()">
+        <mat-icon class="link-menu-icon" svgIcon="lock"></mat-icon>
+        {{ 'USER_MENU.CHANGE_PASSWORD' | translate }}
+      </button>
+
+      <!-- <a class="link-menu" [routerLink]="['/validateEmail']">
+        <mat-icon class="link-menu-icon" svgIcon="email"></mat-icon>
+        {{ 'USER_MENU.CONFIRM_EMAIL' | translate }}</a
+      >
+      <a class="link-menu" [routerLink]="['/selectWebcam']" *ngIf="isMcOper">
+        <mat-icon class="link-menu-icon" svgIcon="photo_camera"></mat-icon>
+        {{ 'USER_MENU.CHOOSE_WEBCAM' | translate }}
+      </a> -->
+
+      <button class="link-menu" (click)="about()">
+        <mat-icon class="link-menu-icon" svgIcon="info"></mat-icon>
+        {{ 'USER_MENU.ABOUT_APP' | translate }}
+      </button>
+      <button class="link-menu" (click)="deactivateAccount()" *ngIf="isMcOper">
+        <mat-icon class="link-menu-icon" svgIcon="block"></mat-icon>
+        {{ 'USER_MENU.BLOCK' | translate }}
+      </button>
+    </div>
+    <button class="button-logout" (click)="logout()">
+      <mat-icon class="button-logout-icon" svgIcon="logout"></mat-icon>
+      {{ 'USER_MENU.LOGOUT' | translate }}
+    </button>
+  </div>
+</div>

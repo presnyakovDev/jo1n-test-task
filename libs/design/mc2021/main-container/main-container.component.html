@@ -1,0 +1,36 @@
+<div class="container">
+  <div
+    class="sidenav-container"
+    *ngIf="mode !== 'MOBILE_ATTACHES' && !online && !registration && !onboarding"
+    [style.width]="getWidthForSideNav()"
+    [class.sidenav-container__fixed]="isFixedMenu"
+  >
+    <mc-2021-side-nav-menu
+      [logo]="logo"
+      [showMenuCategories]="showMenuCategories"
+      (onCloseMenu)="onChangeStateMenu($event)"
+      [isOpenMenu]="isOpenMenu"
+      (onFixedMenu)="fixedSidenav($event)"
+    ></mc-2021-side-nav-menu>
+  </div>
+  <div class="sidenav-container__bg-container" *ngIf="!isLaptop && isOpenMenu" (click)="onChangeStateMenu(false)"></div>
+  <div class="content-container" [class.without-menu]="registration || online || onboarding">
+    <div class="toolbar-container" *ngIf="mode !== 'MOBILE_ATTACHES' && !online && !onboarding">
+      <mc-2021-toolbar
+        [shopPointCaption]="shopPointCaption"
+        [spa]="spa"
+        [isLaptop]="isLaptop"
+        [visibleSelectLang]="visibleSelectLang"
+        [visibleUser]="!registration"
+        (onOpenMenu)="onChangeStateMenu($event)"
+        [isOpenMenu]="isOpenMenu"
+      ></mc-2021-toolbar>
+    </div>
+    <div
+      class="content"
+      [style.height]="!online && !isMobile && mode !== 'MOBILE_ATTACHES' ? 'calc(100vh - 49px)' : '100%'"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

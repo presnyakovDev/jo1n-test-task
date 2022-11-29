@@ -1,0 +1,46 @@
+.mc-2021-list-filters-dialog {
+  $cancel-background-color: #f7f7f7;
+
+  .settings-container {
+    overflow: hidden;
+    width: 400px;
+    max-width: 400px !important;
+    padding-top: 24px;
+
+    .check-list {
+      width: 100%;
+      background-color: #fff;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      padding: 0 24px;
+
+      .filters-header {
+        font-weight: 700;
+        margin-bottom: 32px;
+        margin-left: 8px;
+        margin-top: 8px;
+      }
+
+      .checkbox {
+        width: 50%;
+      }
+    }
+
+    .actions {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+
+      .cancel {
+        background-color: $cancel-background-color;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .mat-dialog-container {
+    padding: 0;
+  }
+}
