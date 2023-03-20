@@ -14,13 +14,15 @@ import {
   DictionariesApiService,
   FuseConfirmDialogComponent,
   Bank,
-  McTranslateService,
+  McTranslateService, McPartnerSelectDialogComponent,
 } from '@mc/core';
 import { McCompanySelectDialogComponent } from '@mc/core';
 
 import { ServiceProductsApiService } from '../../services/service-products-api.service';
 import { ServiceProductsTemplateApiService } from '../../services/service-products-template-api.service';
 import { ServiceProduct, ServiceProductScanSetting } from '../../models/service-product.model';
+import {filter, map, take} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'mc-service-product-form',
@@ -168,6 +170,7 @@ export class McServiceProductFormComponent implements OnInit {
 
       endStampRule: null,
       baseEndValue: null,
+      companyCaption: '',
 
       jointAccountEnabled: false,
       providerCompanyCaption: '',
@@ -189,6 +192,7 @@ export class McServiceProductFormComponent implements OnInit {
 
     this.item.brandId = formData.brandId;
     this.item.goodId = formData.goodId;
+    this.item.companyCaption = formData.companyCaption;
     this.item.companyId = formData.companyId;
     this.item.typeId = formData.typeId;
 
@@ -227,6 +231,7 @@ export class McServiceProductFormComponent implements OnInit {
 
       brandId: item.brandId,
       goodId: item.goodId,
+      companyCaption: item.companyCaption,
       companyId: item.companyId,
       typeId: item.typeId,
 
@@ -353,6 +358,43 @@ export class McServiceProductFormComponent implements OnInit {
           });
         });
     }
+  }
+
+  choosePartner() {
+    const dialogRef = this.dialog.open(McPartnerSelectDialogComponent, {
+      data: {
+        title: 'Выберите организацию предоставляющую доп.услугу',
+      },
+    });
+    dialogRef.afterClosed()
+      .pipe(
+        take(1),
+        filter((selectionResult) => selectionResult && selectionResult.selectedItem),
+        map(selectionResult => selectionResult.selectedItem)
+      )
+      .subscribe((partner) => {
+        this.confirmPartnerChange()
+          .pipe(
+            take(1),
+            filter((result) => result)
+          )
+          .subscribe(() => {
+            this.form.patchValue({
+              companyCaption: partner.caption,
+              companyId: partner.id,
+            });
+          })
+      });
+  }
+
+  confirmPartnerChange(): Observable<any> {
+    const dialogRef = this.dialog.open(FuseConfirmDialogComponent, {
+      data: {
+        title: 'Действительно хотите сменить организацию предоставляющую доп.услугу?',
+      },
+    });
+
+    return dialogRef.afterClosed()
   }
 
   chooseCompany() {

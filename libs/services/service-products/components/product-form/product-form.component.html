@@ -65,20 +65,19 @@
         </div>
 
         <div fxLayout="row" fxLayoutAlign="start start" fxLayout.xs="column">
-          <div fxFlex="50%" class="ng-select-field">
-            <ng-select
-              appendTo="body"
+          <mat-form-field
+            fxFlex="50%"
+          >
+            <input
               name="companyId"
-              formControlName="companyId"
-              bindValue="value"
-              dropdownPosition="bottom"
-              [selectOnTab]="true"
-              [clearable]="false"
-              [items]="companyVariants"
+              formControlName="companyCaption"
+              readonly
               placeholder="{{ fieldTitles['companyId'] }}"
-            ></ng-select>
+              (click)="choosePartner()"
+              matInput
+            />
             <mat-error *ngIf="formErrors.has('companyId')">{{ formErrors.get('companyId') }}</mat-error>
-          </div>
+          </mat-form-field>
 
           <div fxFlex="50%" class="ng-select-field">
             <ng-select
