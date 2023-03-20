@@ -420,4 +420,9 @@ export class McServiceProductFormComponent implements OnInit {
       });
     });
   }
+
+  private confirmPartnerChange(): Observable<boolean> {
+    const dialogRef = this.dialog.open(FuseConfirmDialogComponent, {});
+    return dialogRef.afterClosed()
+  }
 }
