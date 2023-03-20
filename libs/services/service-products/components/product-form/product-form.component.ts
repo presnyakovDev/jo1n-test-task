@@ -373,28 +373,25 @@ export class McServiceProductFormComponent implements OnInit {
         map(selectionResult => selectionResult.selectedItem)
       )
       .subscribe((partner) => {
-        this.confirmPartnerChange()
-          .pipe(
-            take(1),
-            filter((result) => result)
-          )
-          .subscribe(() => {
-            this.form.patchValue({
-              companyCaption: partner.caption,
-              companyId: partner.id,
-            });
-          })
+        if (this.form.get('companyId').value) {
+          this.confirmPartnerChange()
+            .pipe(
+              take(1),
+              filter((result) => result)
+            )
+            .subscribe(() => {
+              this.form.patchValue({
+                companyCaption: partner.caption,
+                companyId: partner.id,
+              });
+            })
+        } else {
+          this.form.patchValue({
+            companyCaption: partner.caption,
+            companyId: partner.id,
+          });
+        }
       });
-  }
-
-  confirmPartnerChange(): Observable<any> {
-    const dialogRef = this.dialog.open(FuseConfirmDialogComponent, {
-      data: {
-        title: 'Действительно хотите сменить организацию предоставляющую доп.услугу?',
-      },
-    });
-
-    return dialogRef.afterClosed()
   }
 
   chooseCompany() {
